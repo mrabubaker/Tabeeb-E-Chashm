@@ -1,0 +1,25 @@
+<h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Customers</h2>
+    <div class="table-responsive" style="padding-left:30px; padding-right:30px">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+      
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <!-- <th>Password</th> -->
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor ="let q of users" >
+            <td>{{q.first_name}}</td>
+            <td>{{q.last_name}}</td>
+            <td>{{q.email}}</td>
+            <!-- <td>{{q.password}}</td> -->
+            <td><button type="button" class="btn btn-primary" (click)="deleteuser(q._id)">Delete </button> </td>
+            
+          </tr>
+         </tbody>
+      </table>
+    </div>

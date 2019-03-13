@@ -1,0 +1,20 @@
+.cart {
+    height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+select {
+    border:2px solid black;
+    vertical-align:top;
+    height:40px;
+    width: 100px;
+    border-radius: 5px;
+}

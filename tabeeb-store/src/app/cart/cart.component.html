@@ -1,0 +1,29 @@
+<app-unavbar></app-unavbar>
+<button type="button" class="btn btn-primary" (click)="AddtoOrder()" style="float:right; margin: 20px">Checkout</button>
+<h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Your Cart</h2>
+    <div class="table-responsive" style="padding-left:30px; padding-right:30px">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+      
+            <th>Product Name</th>
+            <th>No. of Items</th>
+            <th>Price</th>
+            <!-- <th>Password</th> -->
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let p of product">
+            <td>{{p.Productname}}</td>
+            <td> <input type="number" name="noofitems" style="width: 50px"> </td>
+            <td>Rs. {{p.price}}</td>
+            <!-- <td>{{p.noOfItems}}</td> -->
+            <!-- <td>{{q.password}}</td> -->
+            <td><button type="button" class="btn btn-primary" (click)="remove(p.Productname)">Remove</button> </td>
+          </tr>
+         </tbody>
+      </table>
+      <!-- <a routerLink="../addproduct"><button type="button" class="btn btn-primary btn-lg">Add Product</button></a> -->
+    </div>
+

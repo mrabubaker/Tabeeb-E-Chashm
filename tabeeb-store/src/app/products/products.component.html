@@ -1,0 +1,17 @@
+<div class="album py-5">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-4" *ngFor ="let p of products">
+          <div class="card-body bg-light" align="center">
+              <img class="card-img-top" src="../../assets/img.png" alt="Card image cap">
+            <h5 class="card-title">{{p.Productname}}</h5>
+            <p class="card-title">{{p.Description}}</p>
+            <h6 class="card-title">Rs. {{p.price}}</h6>
+        
+            <a routerLink="viewdetails/{{p._id}}"><button type="button" class="btn btn-primary">View Details </button></a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

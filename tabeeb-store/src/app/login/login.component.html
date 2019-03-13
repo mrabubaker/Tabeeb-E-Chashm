@@ -1,0 +1,22 @@
+<h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">LOG IN</h2>
+
+<div class="container">
+  <form style="margin-top:30px" #onloginf="ngForm" (submit)="onlogin(onloginf)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" autofocus ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email" name="emailet">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password"  ngModel required class="form-control" name="passet" id="exampleInputPassword1" placeholder="Password">
+    </div>
+
+    <div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a routerLink="../signup"  style="margin-left:20px">Create New Account</a> 
+  </div>
+  </form>
+
+</div>

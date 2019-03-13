@@ -1,0 +1,26 @@
+
+<form style="padding: 100px" #onAddingProductF="ngForm" (submit)="ProdcutAdd(onAddingProductF)">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Product ID</label>
+        <input type="text" autofocus ngModel class="form-control" name="productidtext"  placeholder="Product ID">
+      </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Product Name</label>
+    <input type="text" autofocus ngModel class="form-control" name="productnametext"  placeholder="Product Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <input type="text" autofocus ngModel class="form-control" name="productdescriptiontext" placeholder="Description">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Price</label>
+    <input type="text" autofocus ngModel class="form-control" name="productpricetext" placeholder="Price">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">No. of Items</label>
+    <input type="text" autofocus ngModel class="form-control" name="noofitemstext" placeholder="Number of Itmes">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

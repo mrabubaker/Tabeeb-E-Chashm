@@ -1,0 +1,83 @@
+<app-unavbar></app-unavbar>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+  </form>
+</nav>
+
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+  </form>
+</nav>
+
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+  </form>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <nav class="navbar navbar-light">
+        <form class="form-inline">
+          <button class="btn btn-outline-primary" type="button">TRY ON</button>
+        </form>
+      </nav>
+
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
+        style="height: 400px; width: 600px; margin: 10px; border: 2px solid black">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="../../assets/sun1.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../assets/sun2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../assets/sun3.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="row">
+        <h1 style="font-size: 30px">{{product.Productname}}</h1>
+      </div>
+      <div class="row">
+        <h6 class="text-muted">Size: Large</h6>
+      </div>
+      <div class="row">
+        <h4>Rs. {{product.price}}</h4>
+        <span class="reflekt-tips"></span>
+      </div>
+      <div class="row">
+        <a><button type="button" (click)="AddtoCart()" class="btn btn-outline-primary btn-lg">Add to Cart</button>
+        </a>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-md-4">
+          <select class="custom-select custom-select-md mb-2" name="NumberofItems" id="NoofItems">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</div>

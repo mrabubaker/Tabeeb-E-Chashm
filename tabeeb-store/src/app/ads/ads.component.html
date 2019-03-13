@@ -1,0 +1,44 @@
+<h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Ads</h2>
+
+<div class="container">
+  <form style="margin-top:30px" #AdF="ngForm" (submit)="AddAd(AdF)">
+
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Ad Title</label>
+      <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Title" name="adtitle">
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Start Time</label>
+          <input type="datetime-local" autofocus ngModel class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" name="starttiming">
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="exampleInputEmail1">End Time</label>
+          <input type="datetime-local" autofocus ngModel class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" name="endtiming">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Select Poster</label>
+      <input type="file" autofocus ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        name="posterforad">
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary">DONE</button>
+  </form>
+</div>
+
