@@ -45,21 +45,34 @@
         </a>
       </div>
     </div>
+
+
     <div class="col-md-5">
-      <div class="row">
-        <h1 style="font-size: 30px">{{product.Productname}}</h1>
-      </div>
-      <div class="row">
-        <h6 class="text-muted">Size: Large</h6>
-      </div>
-      <div class="row">
-        <h4>Rs. {{product.price}}</h4>
-        <span class="reflekt-tips"></span>
-      </div>
-      <div class="row">
-        <a><button type="button" (click)="AddtoCart()" class="btn btn-outline-primary btn-lg">Add to Cart</button>
-        </a>
-      </div>
+      <form action="post" #onCartf="ngForm" (submit)="onAddToCart(onCartf)">
+        <div class="row">
+          <h1 style="font-size: 30px">{{product.Productname}}</h1>
+        </div>
+        <div class="row">
+          <h6 class="text-muted">Size: Large</h6>
+        </div>
+        <div class="row">
+          <div class="col-md-4 input-group" style="padding:0; margin:0">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Quantity</span>
+            </div>
+            <input type="number" min="1" value="1" name="qty" max={{product.noOfItems}} ngModel class="form-control" aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="row">
+          <h4>Rs. {{product.price}}</h4>
+          <span class="refleakt-tips"></span>
+        </div>
+        <div class="row">
+          <!-- (click)="AddtoCart()" -->
+          <a><button type="submit" class="btn btn-outline-primary btn-lg">Add to Cart</button>
+          </a>
+        </div>
+      </form>
 
       <!-- <div class="row">
         <div class="col-md-4">

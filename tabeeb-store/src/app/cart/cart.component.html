@@ -5,10 +5,9 @@
       <table class="table table-striped table-sm">
         <thead>
           <tr>
-      
             <th>Product Name</th>
             <th>No. of Items</th>
-            <th>Price</th>
+            <th>Unit Price</th>
             <!-- <th>Password</th> -->
             <th></th>
           </tr>
@@ -16,11 +15,12 @@
         <tbody>
           <tr *ngFor= "let p of product">
             <td>{{p.Productname}}</td>
-            <td> <input type="number" name="noofitems" style="width: 50px"> </td>
+            <td> <input type="number" min="1" value={{p.qty}} max={{p.noOfItems}} name="quantitiyselected" style="width: 50px" (change)="changeQuantity($event)"> </td>
             <td>Rs. {{p.price}}</td>
             <!-- <td>{{p.noOfItems}}</td> -->
             <!-- <td>{{q.password}}</td> -->
-            <td><button type="button" class="btn btn-primary" (click)="remove(p.Productname)">Remove</button> </td>
+            <td><button type="button" class="btn btn-primary" (click)="remove(p.Productname)">Remove</button>
+            <button type="button" class="btn btn-primary" (click)="BuyNow(p.id)" style="margin-left: 20px">Buy Now</button> </td>
           </tr>
          </tbody>
       </table>

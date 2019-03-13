@@ -39,4 +39,23 @@ export class CartComponent implements OnInit {
 
     }
 
+    changeQuantity(e){
+      console.log("Yahoooo! KeyDown Prssed Successfully")
+    }
+
+    BuyNow(form: NgForm){
+      this.http.post('http://localhost:3000/sales', {
+        
+      }).subscribe(data => {
+         console.log(data);
+        if (data['status'] == 'OK') {
+          //this.route.navigate(['login']);
+        }
+        else
+        {
+          alert("Error Signup!");
+        }
+      });
+    }
+
 }

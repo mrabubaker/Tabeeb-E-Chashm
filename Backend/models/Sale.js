@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const OrderSchema = new Schema({
+const SaleSchema = new Schema({
     Product: [
         {
         productid: {
@@ -15,11 +15,14 @@ const OrderSchema = new Schema({
     usesrid: {
         type: String,
     },
-    orderid: {
-        type: String,
+    date: {
+        default: DateNow
+    },
+    status: {
+        type: boolean
     }
-
+    
 })
 
-module.exports = order = mongoose.model('orders', OrderSchema)
+module.exports = sale = mongoose.model('sale', SaleSchema)
 
