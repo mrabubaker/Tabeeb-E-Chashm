@@ -1,74 +1,38 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+var Customer =require('./customer')
+var RatingSchema = new Schema({
+	Customer: Customer,
+	No_of_Items: { type: Integer, required: true}
+});
+var ReviewSchema = new Schema({
+	Customer: Customer,
+	Review_Comment: { type: String, required: true},
+	Review_Date: { type: Date, default: Date.now },
+});
 
-const ProductSchema = new Schema({
-    Productid: {
-        type: String,
-    },
-    Productname: {
-        type: String,
-    },
-    Description: {
-        type: String,
-    },
-    Rating: {
-        type: Number,
-        default: 0
-    },
-    Review: {
-        type: String,
-        default: null
-    },
-    Specification: [
-        {
-            shape : {
-                type: String,
-                default: null
-            },
-            style:{
-                type:String,
-                default: null
-            },
-            rim:{
-                type: String,
-                default: null
-            },
-            gender:{
-                type:String,
-                default: null
-            },
-            material:{
-                type:String,
-                default: null
-            },
-            category:{
-                type:String,
-                default: null
-            }
-        }
-    ],
-    productPhoto :{
-        type:String,
-        default: null
-    },
-    '360DegreePhoto':{
-        type:String,
-        default: null
-    },
-    zoomPhoto:{
-        type:String,
-        default: null
-    },
-    noOfItems:{
-        type:Number,
-        default: null
-    },
-    price:{
-        type:Number,
-        default: null
-    }
+var ProductSchema = new Schema({
+	Product_ID: { type: ObjectID, required: true},
+	Description: { type: String, required: true},
+	Ratings: [ RatingSchema ],
+	Reviews: [ ReviewSchema ],
+	Product_Specifications: {
+		Shape: { type: String, required: true},
+		Style: { type: String, required: true},
+		Rim: { type: String, required: true},
+		Gender: { type: String, required: true},
+		Material: { type: String, required: true},
+		Category: { type: String, required: true},
+	},
+	Product_Photo: { type: String, required: true},
+	three60Degree_Photos: { type: String, required: true},
+	Zoom_Photo: { type: String, required: true},
+	No_of_Items: { type: Integer, required: true},
+	Price: { type: int, required: true }
+});
 
-})
 
-module.exports = products = mongoose.model('products', ProductSchema)
 
+const  Product = mongoose.model('product',ProductSchema);
+
+module.exports = Product;
