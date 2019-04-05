@@ -21,10 +21,10 @@ var CustomerSchema = new Schema({
 	Password: { type: String, required: true},
 	Email: { type: String, required: true},
 	Phone: { type: Long , required: true},
-	Optical_Specifications: [ Optical_Specifications ],
+	Optical_Specifications:  Optical_Specifications ,
 	Virtual_TryOn_Photos: [ {Product:Product, Photo: {type: String, required: true} }],
 	Wishlist: [ Product ],
-	Cart: [ Cart ],
+	Cart:  Cart ,
 	OrderHistory: [ Order ] 
 });
 const  Customer = mongoose.model('customer',CustomerSchema);

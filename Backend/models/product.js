@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 var Customer =require('./customer')
 var RatingSchema = new Schema({
 	Customer: Customer,
