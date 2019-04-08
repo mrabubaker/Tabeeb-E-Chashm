@@ -33,10 +33,7 @@ app.use((req, res, next) => {
 
 app.use('/products',require('./routes/product'));
 app.use('/customers',require('./routes/customer'));
-// app.use('/agent',require('./routes/agents'));
-// app.use('/session',require('./routes/sessions'));
-// app.use('/sensor',require('./routes/sensors'));
-// app.use('/attackorigin', require('./routes/attack_origins'))
+
 
 //error handling by acedemind
 app.use((req, res, next) => {

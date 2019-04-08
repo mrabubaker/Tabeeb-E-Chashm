@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 var RatingSchema = new Schema({
 	Customer: {type: mongoose.Schema.Types.ObjectId, ref: "Customer"},
-	No_of_Items: { type: Number, required: true}
+	RatingValue: { type: Number, required: true}
 });
 var ReviewSchema = new Schema({
 	Customer: {type: mongoose.Schema.Types.ObjectId, ref: "Customer"},
@@ -12,7 +12,8 @@ var ReviewSchema = new Schema({
 });
 
 var ProductSchema = new Schema({
-	Product_ID: { type:  mongoose.Schema.Types.ObjectId, required: true},
+	Product_ID: { type:  mongoose.Schema.Types.ObjectId},
+	Product_Name:{type:String,required: true},
 	Description: { type: String, required: true},
 	Ratings: [ RatingSchema ],
 	Reviews: [ ReviewSchema ],
