@@ -38,11 +38,25 @@ exports.customer_login_customer=(req, res, next) =>{
 exports.customer_add_new_customer = (req, res, next) => {
     
     console.log('Create new Customer')
-    
-    Customer.create(req.body).then(function(customer){
-        console.log(customer)
-        if(doc){
-            res.send({status: 'Sign Up Successful!'})
+
+    //check if there isn't any account associated with the same email
+    Customer.findOne({
+        Email: req.body.Email
+    }).then(customer => {
+        if(!customer){
+            Customer.create(req.body).then(status => {
+                if(status){
+                    res.send({status: 'Sign Up Successful'})
+                }
+            })
         }
-        
-    })};
+        else{
+            res.send({
+                status: 'Error! There is an account already registered with this Email'
+            })
+        }
+    }
+   
+
+
+    )};

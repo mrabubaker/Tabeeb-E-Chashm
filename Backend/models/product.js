@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 var RatingSchema = new Schema({
 	Customer: {type: mongoose.Schema.Types.ObjectId, ref: "customer"},
-	RatingValue: { type: Number, required: true}
+	RatingValue: { type: Number}
 });
 var ReviewSchema = new Schema({
 	Customer: {type: mongoose.Schema.Types.ObjectId, ref: "customer"},
-	Review_Comment: { type: String, required: true},
+	Review_Comment: { type: String},
 	Review_Date: { type: Date, default: Date.now },
 });
 
@@ -22,16 +22,16 @@ var ProductSchema = new Schema({
 		Rim: { type: String, required: true},
 		Gender: { type: String, required: true},
 		Material: { type: String, required: true},
-		Category: { type: String, required: true},
 		TempleSize: { type: String, required: true},
 		BridgeSize: { type: String, required: true},
 		EyeSize: { type: String, required: true},
 		Color: { type: String, required: true}
 	},
 	ProductPhoto: { type: String, required: true},
-	AllPhotos: [{type: String, required: true}],
+	AllPhotos: [{type: String}],
 	Quantity: { type: Number, required: true},
-	Price: { type: Number, required: true }
+	Price: { type: Number, required: true },
+	TAG: {type: String}
 });
 
 

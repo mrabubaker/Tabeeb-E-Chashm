@@ -8,7 +8,6 @@ const app = express();
 
 //connect to monogdb
  mongoose.connect('mongodb://localhost/Chashm');
-// mongoose.connect('mongodb://mongo/Honssh');
 //CONTAINER-NAME:port
 mongoose.Promise = global.Promise;
 
@@ -34,21 +33,5 @@ app.use((req, res, next) => {
 app.use('/products',require('./routes/product'));
 app.use('/customers',require('./routes/customer'));
 
-
-//error handling by acedemind
-// app.use((req, res, next) => {
-//     const error = new Error("Not found");
-//     error.status = 404;
-//     next(error);
-//   });
-  
-// app.use((error, req, res, next) => {
-//   res.status(error.status || 500);
-//   res.json({
-//     error: {
-//       message: error.message
-//     }
-//   });
-// });
 
 module.exports = app;

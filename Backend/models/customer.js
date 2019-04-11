@@ -14,8 +14,7 @@ var OpticalSpecificationSchema = new Schema({
 });
 
 var CustomerSchema = new Schema({
-	Customer_Name: {type: String, required: true} ,
-	Customer_Username: { type: String, required: true},	
+	CustomerName: {type: String, required: true} ,
 	Password: { type: String, required: true},
 	Email: { type: String, required: true},
 	Phone: { type: Number},
@@ -24,4 +23,4 @@ var CustomerSchema = new Schema({
 
 
 const  Customer = mongoose.model('customer',CustomerSchema);
-module.exports = {Customer};
+module.exports = Customer;
