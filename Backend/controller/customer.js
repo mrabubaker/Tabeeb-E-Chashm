@@ -11,15 +11,8 @@ exports.customer_get_customer = (req, res, next) => {
     })};
     
 exports.customer_login_customer=(req, res, next) =>{
-    // Customer.find({'Email':req.body.Email,'Password':req.body.Password},function(err, customer){
-    //     if(err){
-    //         res.json({'message': 'mahzrat'})
-    //     }else{
-    //         res.json({'message':'login_successfull'
-    //         })
-    //     }  
-    // })
 
+    console.log("CLIENT REQUESTING LOGIN WITH CREDENTIALS: "+req.body.Email+" and "+req.body.Password)
     Customer.findOne({'Email':req.body.Email,'Password':req.body.Password}).then(doc => {
         if(doc){
             res.send({

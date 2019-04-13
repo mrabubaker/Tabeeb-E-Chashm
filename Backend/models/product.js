@@ -17,6 +17,7 @@ var ProductSchema = new Schema({
 	Ratings: [ RatingSchema ],
 	Reviews: [ ReviewSchema ],
 	ProductSpecifications: {
+		Category: [{type: String, required: true}],
 		Shape: { type: String, required: true},
 		Style: { type: String, required: true},
 		Rim: { type: String, required: true},
@@ -25,13 +26,13 @@ var ProductSchema = new Schema({
 		TempleSize: { type: String, required: true},
 		BridgeSize: { type: String, required: true},
 		EyeSize: { type: String, required: true},
-		Color: { type: String, required: true}
+		Color: [{ type: String, required: true}]
 	},
 	ProductPhoto: { type: String, required: true},
-	AllPhotos: [{type: String}],
+	AllPhotos: [{type: String, required: true}],
 	Quantity: { type: Number, required: true},
 	Price: { type: Number, required: true },
-	TAG: {type: String}
+	TAG: [{type: String}]
 });
 
 

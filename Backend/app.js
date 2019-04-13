@@ -7,14 +7,19 @@ const morgan = require('morgan');
 const app = express();
 
 //connect to monogdb
- mongoose.connect('mongodb://localhost/Chashm');
+ mongoose.connect('mongodb://localhost/Chashm', { useNewUrlParser: true });
 //CONTAINER-NAME:port
 mongoose.Promise = global.Promise;
 
 
+
+
 app.use(morgan("dev"));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
+//default: app.use(bodyParser.urlencoded({extended: false}));
+//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({limit:'10mb',extended: true}));
+app.use(bodyParser.json({limit: '10mb', extended: true}));
 
 // Added by academind tutorial#3 for accessing it from diffenent server.
 app.use((req, res, next) => {
