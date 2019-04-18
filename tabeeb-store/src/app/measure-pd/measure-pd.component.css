@@ -1,8 +1,9 @@
 .wrap{
-    width: 600px;
-    height: 700px;
+    
+    width: 640px;
+    height: 480px;
     border : 2px solid gray;
-    background-image: url('../../assets/test.jpg');
+    
   
   }
   .draggableleft{

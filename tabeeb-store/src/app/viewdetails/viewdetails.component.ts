@@ -29,26 +29,26 @@ export class ViewdetailsComponent implements OnInit {
 
     console.log(form.value);
 
-   
-      //   // this.router.navigate(['../../cart'], { queryParams: { productname: this.product.Productname, productprice: this.product.price, 
-      //   // noofproducts: this.product.noOfItems
-      //     this.http.post('http://localhost:3000/cart/product', {
 
-      //     }).subscribe(data => {
-      //       //alert(data); 
-      //       //console.log(data[0]);
-      //       this.product = data;
-      //       if (data['status'] == 'OK') {
+    //   // this.router.navigate(['../../cart'], { queryParams: { productname: this.product.Productname, productprice: this.product.price, 
+    //   // noofproducts: this.product.noOfItems
+    //     this.http.post('http://localhost:3000/cart/product', {
 
-      //         //alert("Login Successful");
-      //       }
-      //       else {
-      //         // alert("Error Login!");
-      //       }
-      //     });
-      // }
-      
-    
+    //     }).subscribe(data => {
+    //       //alert(data); 
+    //       //console.log(data[0]);
+    //       this.product = data;
+    //       if (data['status'] == 'OK') {
+
+    //         //alert("Login Successful");
+    //       }
+    //       else {
+    //         // alert("Error Login!");
+    //       }
+    //     });
+    // }
+
+
   }
 
   fetchSelectedProduct() {

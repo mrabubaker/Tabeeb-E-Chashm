@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharingImageService } from '../sharing-image.service';
 declare let $: any;
 
 @Component({
@@ -17,9 +18,11 @@ export class MeasurePDComponent implements OnInit {
   // rightCard_xAxis = 1;
   // rightCard_yAxis = 1;
 
-  constructor() { }
-
+  constructor(private imageservice: SharingImageService) { }
+  imagesource;
   ngOnInit() {
+      this.imagesource = this.imageservice.getImage();
+      console.log(this.imagesource);
 
     $(function () {
 
@@ -141,6 +144,11 @@ export class MeasurePDComponent implements OnInit {
     },
     );
 
+  }
+
+  getUrl() {
+    console.log(this.imagesource.imageAsDataUrl)
+    return `url(${this.imagesource.imageAsDataUrl})`;
   }
 
 }

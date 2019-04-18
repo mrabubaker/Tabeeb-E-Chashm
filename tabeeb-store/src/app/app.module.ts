@@ -31,6 +31,8 @@ import { OrderComponent } from './order/order.component';
 import { OrdermanagementComponent } from './ordermanagement/ordermanagement.component';
 import { OpencameraComponent } from './opencamera/opencamera.component';
 
+import {WebcamModule} from 'ngx-webcam';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +66,8 @@ import { OpencameraComponent } from './opencamera/opencamera.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NoopAnimationsModule 
+    NoopAnimationsModule,
+    WebcamModule
   ],
   providers: [],
   bootstrap: [AppComponent]
