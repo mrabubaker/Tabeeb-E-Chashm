@@ -10,5 +10,6 @@ router.post('/get_tag_products',ProductController.product_get_tag_products);
 
 router.post('/get_name_products',ProductController.product_get_name_products);
 
+router.post('/get_category_products',ProductController.product_get_category_products);
 
 module.exports = router;

@@ -64,6 +64,35 @@ exports.product_get_name_products = (req, res, next) => {
             //console.log(doc);
             //res.end();
         }
+        else{
+            res.send("No Such Product found!");
+        }
+        //res.end();
+    }).catch(e => {
+        console.log(e);
+    }) 
+};
+
+exports.product_get_category_products = (req, res, next) => {
+    console.log('CLIENT REQUEST PRODUCT:  ' ,req.body);
+    let products = []
+    Product.find()
+    .then(doc =>{
+        if(doc){
+            //res.send({"Array":doc});
+            doc.forEach(element => {
+                element.ProductSpecifications.Category.forEach(cat => {
+                    if(cat == req.body.Category){
+                        products.push(element)
+                    }
+                });
+            });
+            //console.log(doc);
+            res.send({"Array":products});
+        }
+        else{
+            res.send("No Such Product found!");
+        }
         //res.end();
     }).catch(e => {
         console.log(e);
