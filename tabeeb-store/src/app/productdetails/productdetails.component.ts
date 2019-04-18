@@ -21,18 +21,18 @@ export class ProductdetailsComponent implements OnInit {
 
 
   FetchProducts() {
-    this.http.post('http://localhost:3000/allProducts', {
+    this.http.get('http://localhost:3000/products/get_all_products', {
 
     }).subscribe(data => {
       //alert(data); 
-      //console.log(data[0]);
+      // console.log(data[0]);
       this.products = data;
       if (data['status'] == 'OK') {
 
         //alert("Login Successful");
       }
       else {
-        // alert("Error Login!");
+        console.log("Error Login!");
       }
     });
   }

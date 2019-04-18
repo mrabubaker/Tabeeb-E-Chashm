@@ -13,9 +13,9 @@
         </thead>
         <tbody>
           <tr *ngFor ="let p of products" >
-            <td>{{p.Productname}}</td>
-            <td>Rs. {{p.price}}</td>
-            <td>{{p.noOfItems}}</td>
+            <td>{{p.ProductName}}</td>
+            <td>Rs. {{p.Price}}</td>
+            <td>{{p.Quantity}}</td>
             <!-- <td>{{q.password}}</td> -->
             <td><button type="button" class="btn btn-primary" (click)="deleteproduct(p._id)">Delete </button> </td>
           </tr>

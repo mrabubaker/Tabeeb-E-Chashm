@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
+
 
 @Component({
   selector: 'app-user-dashboard',
@@ -9,10 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent implements OnInit {
+  param1: any;
 
-  constructor(private http: HttpClient, private route: Router) { }
+  constructor(private http: HttpClient, private route: Router, private router: ActivatedRoute) { }
 
   ngOnInit(){
     
-  }
 }
+  }
+

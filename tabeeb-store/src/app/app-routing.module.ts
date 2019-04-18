@@ -12,6 +12,11 @@ import {ProductsComponent} from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import {ProductdetailsComponent} from './productdetails/productdetails.component';
 import {ViewdetailsComponent} from './viewdetails/viewdetails.component';
+import {MeasurePDComponent} from './measure-pd/measure-pd.component';
+import {PrescriptionComponent} from './prescription/prescription.component';
+import {OrderComponent} from './order/order.component';
+import {OrdermanagementComponent} from './ordermanagement/ordermanagement.component';
+import {OpencameraComponent} from './opencamera/opencamera.component';
 
 
 const routes: Routes = [
@@ -22,17 +27,22 @@ const routes: Routes = [
         { path: 'customer', component: DashboardComponent},
         { path: 'productdetail', component: ProductdetailsComponent},
         { path: 'addproduct', component: AddProductComponent},
-        { path: 'order', component: LoginComponent},
+        { path: 'ordermanagement', component: OrdermanagementComponent},
         { path: 'discount', component: DiscountsComponent},
         { path: 'Ads', component: AdsComponent},
-        { path: 'login', component: LoginComponent}
+        { path: 'login', component: LoginComponent},
     ]
 
 },
     { path: '', component: UserDashboardComponent},
+    {path: 'MeasurePD', component: MeasurePDComponent},
     { path: 'cart', component: CartComponent},
-    { path: 'viewdetails/:id', component:ViewdetailsComponent}
-
+    // { path: 'viewdetails/:id', component:ViewdetailsComponent}
+    { path: 'viewdetails/:id', component:ViewdetailsComponent},
+    { path: 'Prescription', component:PrescriptionComponent},
+    { path: 'order', component:OrderComponent},
+    { path: 'camera', component: OpencameraComponent},
+    
 ]
 
 @NgModule({

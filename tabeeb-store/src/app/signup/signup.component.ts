@@ -16,23 +16,25 @@ export class SignupComponent implements OnInit {
   }
 
   onSignUp(form: NgForm) {
-    console.log('signup form submitted');
+    // console.log('signup form submitted');
 
     if (form.invalid) {
       return;
     }
 
+    console.log()
 
 
 
-    this.http.post('http://localhost:3000/user/register', {
-      'first_name': form.value.firstet,
-      'last_name': form.value.lastet,
-      'email': form.value.emailet,
-      'password': form.value.pass1
+
+    this.http.post('http://localhost:3000/customers/signup', {
+      'CustomerName': form.value.firstet + " " + form.value.lastet, 
+      'Email': form.value.emailet,
+      'Password': form.value.pass1
+
     }).subscribe(data => {
-       console.log(data);
       if (data['status'] == 'OK') {
+        console.log(status);
         this.route.navigate(['login']);
       }
       else
@@ -42,7 +44,7 @@ export class SignupComponent implements OnInit {
     });
 
 
-    // console.log(form.value);
+   console.log(form.value);
   }
 
 }

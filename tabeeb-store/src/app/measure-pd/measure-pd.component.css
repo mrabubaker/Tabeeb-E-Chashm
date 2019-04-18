@@ -1,0 +1,44 @@
+.wrap{
+    width: 600px;
+    height: 700px;
+    border : 2px solid gray;
+    background-image: url('../../assets/test.jpg');
+  
+  }
+  .draggableleft{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    left: 40%;
+    top: 25%;
+    /* background-color: blacK; */
+  }
+  
+  .draggableright{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+  
+    left: 55%;
+    top: 25%;
+    /* background-color: black; */
+  }
+
+  
+  .cardleft{
+    width: 10px;
+    height: 100px;
+    border-radius: 3px;
+    left: 30%;
+    top: 76%;
+    background-color: black;
+  }
+
+  .cardright{
+    width: 10px;
+    height: 100px;
+    border-radius: 3px;
+    left: 70%;
+    top: 70%;
+    background-color: black;
+  }

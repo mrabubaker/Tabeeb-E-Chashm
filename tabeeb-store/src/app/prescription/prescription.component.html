@@ -1,3 +1,45 @@
-<p>
-  prescription works!
-</p>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<div style="padding-top: 160px; padding-bottom: 159px; padding-left: 20px; padding-right: 20px; background: -webkit-linear-gradient(to bottom, #e63b07, #f3f3f3d7); background: linear-gradient(to bottom, #e63b07, #f3f3f3d7);">
+  <table class="table table-striped" style="border: solid black 2px" style="background: white;">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Sphere(SPH)</th>
+        <th scope="col">Cylinder(CYL)</th>
+        <th scope="col">Axis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Right Eye (OD)</th>
+        <td><select class="custom-select" name="" id="" style="width: 120px"></select></td>
+        <td><select class="custom-select" name="" id="" style="width: 120px"></select></td>
+        <td><select class="custom-select" name="" id="" style="width: 120px"></select></td>
+      </tr>
+      <tr>
+        <th scope="row">Left Eye (OS)</th>
+        <td><select class="custom-select" name="" id="" style="width: 120px"></select></td>
+        <td><select class="custom-select" name="" id="" style="width: 120px"></select></td>
+        <td><select class="custom-select" name="" id="" style="width: 120px"></select></td>
+      </tr>
+      <tr>
+        <td>Pupillary Disctance:</td>
+        <td><select class="custom-select" name="" id="" style="width: 120px"></select></td>
+        <td>  
+            <button type="button" class="btn btn-outline-primary" routerLink="../camera">Measure PD</button>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-primary btn-lg justify-content-center"
+        style="font-family: century gothic; background: #ca4c25; color: black" routerLink="../cart">NEXT</button>
+    </div>
+</div>
+

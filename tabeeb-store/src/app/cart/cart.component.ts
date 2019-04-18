@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CartComponent implements OnInit {
  product;
-  constructor( private http: HttpClient, private route: ActivatedRoute ) { }
+  constructor( private http: HttpClient, private route: Router ) { }
 
   ngOnInit() {
 
@@ -34,7 +34,8 @@ export class CartComponent implements OnInit {
 
     AddtoOrder(){
       //alert("chal rha ha")
-      console.log(this.product);
+      // console.log(this.product);
+      this.route.navigate(['order']);
       
 
     }

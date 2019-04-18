@@ -1,5 +1,20 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</head>
+
 <app-unavbar></app-unavbar>
-<nav class="navbar navbar-light bg-light">
+<!-- <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
   </form>
 </nav>
@@ -12,16 +27,19 @@
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
   </form>
-</nav>
+</nav> -->
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-7">
-      <nav class="navbar navbar-light">
-        <form class="form-inline">
-          <button class="btn btn-outline-primary" type="button">TRY ON</button>
-        </form>
-      </nav>
-
+  <h1
+    style="border-bottom: 1px solid gray; padding: 10px; font-family: montserrat; letter-spacing: 4px; padding-left: 8%; text-transform: uppercase;">
+    {{product.ProductName}}</h1>
+  <nav class="navbar navbar-light">
+    <form class="form-inline">
+      <button class="btn btn-outline-primary" type="button">TRY ON</button>
+      <h6 data-toggle="modal" data-target="#exampleModal" style="border-bottom: dashed 1px black; margin-left: 20px;">
+        Instructions</h6>
+    </form>
+  </nav>
+  <!-- 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
         style="height: 400px; width: 600px; margin: 10px; border: 2px solid black">
         <div class="carousel-inner">
@@ -43,54 +61,181 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
+      </div> -->
+  <div class="row">
+    <div class="col-md-7" style="padding: 0px;">
+      <div *ngFor="let p of product.AllPhotos">
+        <img class="card" src="{{p}}" alt="" style="width: 80%; height: 400px; margin-bottom: 20px; margin-left: 10%">
       </div>
-    </div>
-
-
-    <div class="col-md-5">
-      <form action="post" #onCartf="ngForm" (submit)="onAddToCart(onCartf)">
-        <div class="row">
-          <h1 style="font-size: 30px">{{product.Productname}}</h1>
-        </div>
-        <div class="row">
-          <h6 class="text-muted">Size: Large</h6>
-        </div>
-        <div class="row">
-          <div class="col-md-4 input-group" style="padding:0; margin:0">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Quantity</span>
-            </div>
-            <input type="number" min="1" value="1" name="qty" max={{product.noOfItems}} ngModel class="form-control" aria-describedby="basic-addon1">
-          </div>
-        </div>
-        <div class="row">
-          <h4>Rs. {{product.price}}</h4>
-          <span class="refleakt-tips"></span>
-        </div>
-        <div class="row">
-          <!-- (click)="AddtoCart()" -->
-          <a><button type="submit" class="btn btn-outline-primary btn-lg">Add to Cart</button>
-          </a>
-        </div>
-      </form>
-
-      <!-- <div class="row">
-        <div class="col-md-4">
-          <select class="custom-select custom-select-md mb-2" name="NumberofItems" id="NoofItems">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
+      <!-- <div>
+        <img class="card" src="" alt=""
+          style="width: 80%; height: 400px; margin-bottom: 20px; margin-left: 10%">
+      </div>
+      <div>
+        <img class="card" src="" alt=""
+          style="width: 80%; height: 400px; margin-bottom: 20px; margin-left: 10%">
+      </div>
+      <div>
+        <img class="card" src="" alt=""
+          style="width: 80%; height: 400px; margin-bottom: 20px; margin-left: 10%">
       </div> -->
     </div>
 
+    <div class="col-md-4" style="padding: 0px;">
+      <form action="post" #onCartf="ngForm" (submit)="onAddToCart(onCartf)">
+        <div class="row">
+          <!-- <h1 style="font-size: 30px; padding-top: 20px;">{{product.ProductName}}</h1> -->
+        </div>
+        <!-- <div class="row">
+          <h6 class="text-muted" style="padding-top: 20px;">Size: Large</h6>
+        </div> -->
+        <div class="row">
+          <div class="col-md-4 input-group" style="padding-top: 10px; padding-left: 0px; margin:0;">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Quantity</span>
+            </div>
+            <input type="number" min="1" value="1" name="qty" max={{product.Quantity}} ngModel class="form-control"
+              aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="row" style="border-bottom: 1px solid black; padding-right: 20px;">
+          <h4 style="padding-top: 20px; padding-bottom: 5px;">Rs. {{product.Price}}</h4>
+          <span class="refleakt-tips"></span>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+          <a>
+
+            <button type="submit" routerLink="../../Prescription" class="btn btn-outline-primary btn-lg"
+              style="margin-bottom: 15px;">Add to
+              Cart</button>
+          </a>
+        </div>
+      </form>
+      <!-- <div>
+        <ul id="elements" style="list-style-type: none; padding: 0; orientation: horizontal;">
+          <li class="list">
+            DESCRIPTION
+          </li>
+          <li class="list">
+            DETAILS
+          </li>
+        </ul>
+      </div>
+
+      <div style="padding-left: 5px;">
+        <p>
+          Stand out in the crowd by wearing these Moscot Lemtosh frame. Made from acetate and topped with single stud
+          accent on the top corners it comes in black and tortoise brown color.
+        </p>
+      </div> -->
+
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                DETAILS
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <table class="table">
+                <tr>
+                  <th>Category</th>
+                  <td>{{product.ProductSpecifications.Category}}</td>
+                </tr>
+                <tr>
+                  <th>Shape</th>
+                  <td>{{product.ProductSpecifications.Shape}}</td>
+                </tr>
+                <tr>
+                  <th>Style</th>
+                  <td>{{product.ProductSpecifications.Style}}</td>
+                </tr>
+                <tr>
+                  <th>Rim</th>
+                  <td>{{product.ProductSpecifications.Rim}}</td>
+                </tr>
+                <tr>
+                  <th>Gender</th>
+                  <td>{{product.ProductSpecifications.Gender}}</td>
+                </tr>
+                <tr>
+                  <th>Material</th>
+                  <td>{{product.ProductSpecifications.Material}}</td>
+                </tr>
+                <tr>
+                  <th>Temple Size</th>
+                  <td>{{product.ProductSpecifications.TempleSize}}</td>
+                </tr>
+                <tr>
+                  <th>Bridge Size</th>
+                  <td>{{product.ProductSpecifications.BridgeSize}}</td>
+                </tr>
+                <tr>
+                  <th>Eye Size</th>
+                  <td>{{product.ProductSpecifications.EyeSize}}</td>
+                </tr>
+                <tr>
+                  <th>Color</th>
+                  <td>{{product.ProductSpecifications.Color}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                aria-controls="collapseOne">
+                DESCRIPTION
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              {{product.Description}}
+              <!-- The glasses  -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog " role="document" style="width: 100%;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="padding: 30px; padding-bottom: 0px;">Instructions</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 30px;">
+            <p>
+              <b> Our Virtual Try On Feature Helps You to Find your Perfect Pair</b>
+              <br> 1-Upload your picture to try any frame or sunglasses on your face.
+              <br> 2-You can also choose any picture from our collection that best suits your face shape.
+              <br> 3-Adjust the frame on the face.
+              <br> 4-Explore, try & repeat until you find the best eye glasses and sunglasses for you or your loved
+              ones.</p>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+<app-footer></app-footer>

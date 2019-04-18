@@ -1,7 +1,10 @@
-<h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Ads</h2>
+<form
+  style="padding: 15.5px;  background: -webkit-linear-gradient(to right, #e63b07, #f3f3f3d7); background: linear-gradient(to right, #e63b07, #f3f3f3d7);"
+  #AdF="ngForm" (submit)="AddAd(AdF)">
+  <div class="container"
+    style="padding: 10px; max-width: 500px; width: 100%; margin: 0 auto; position: relative; background: white; border-radius: 10px;">
 
-<div class="container">
-  <form style="margin-top:30px" #AdF="ngForm" (submit)="AddAd(AdF)">
+    <h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Ads</h2>
 
 
     <div class="form-group">
@@ -31,14 +34,10 @@
 
     <div class="form-group">
       <label for="exampleInputEmail1">Select Poster</label>
-      <input type="file" autofocus ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-        name="posterforad">
+      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event)" id="exampleInputEmail1"
+        aria-describedby="emailHelp" name="PosterForAd" accept="image/*">
     </div>
 
-
-
-
     <button type="submit" class="btn btn-primary">DONE</button>
-  </form>
-</div>
-
+  </div>
+</form>

@@ -16,17 +16,19 @@ export class LoginComponent implements OnInit {
   }
 
   onlogin(form : NgForm){
-    console.log('form submit sucessfully');
+    // console.log('form submit sucessfully');
     if(form.invalid){
       return;
     }
 
-    this.http.post('http://localhost:3000/user/login', {
-      'email': form.value.emailet,
-      'password': form.value.passet
+    this.http.post('http://localhost:3000/customers/login', {
+      'Email': form.value.emailet,
+      'Password': form.value.passet,
+      
+      
     }).subscribe(data => {
        console.log(data);
-      if (data['status'] == 'OK') {
+      if (data['status'] == 'Login Successful') {
       
         
         localStorage.setItem('email', form.value.emailet);
@@ -36,7 +38,7 @@ export class LoginComponent implements OnInit {
       }
       else
       {
-       alert("Error Login!");
+       console.log("Error Login!");
       }
     });
 

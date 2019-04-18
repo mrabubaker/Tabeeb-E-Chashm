@@ -21,6 +21,15 @@ import { UnavbarComponent } from './unavbar/unavbar.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
+import { MeasurePDComponent } from './measure-pd/measure-pd.component';
+import { PdComponent } from './pd/pd.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { TestComponent } from './test/test.component';
+import { BlogComponent } from './blog/blog.component';
+import { FooterComponent } from './footer/footer.component';
+import { OrderComponent } from './order/order.component';
+import { OrdermanagementComponent } from './ordermanagement/ordermanagement.component';
+import { OpencameraComponent } from './opencamera/opencamera.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +49,22 @@ import { PrescriptionComponent } from './prescription/prescription.component';
     UnavbarComponent,
     ProductdetailsComponent,
     ViewdetailsComponent,
-    PrescriptionComponent
+    PrescriptionComponent,
+    MeasurePDComponent,
+    PdComponent,
+    TestComponent,
+    BlogComponent,
+    FooterComponent,
+    OrderComponent,
+    OrdermanagementComponent,
+    OpencameraComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule 
+    HttpClientModule,
+    NoopAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

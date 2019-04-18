@@ -29,11 +29,7 @@ export class ViewdetailsComponent implements OnInit {
 
     console.log(form.value);
 
-    if (!localStorage.getItem('email')) {
-      alert('Please Login!');
-      return;
-    }
-    else {
+   
       //   // this.router.navigate(['../../cart'], { queryParams: { productname: this.product.Productname, productprice: this.product.price, 
       //   // noofproducts: this.product.noOfItems
       //     this.http.post('http://localhost:3000/cart/product', {
@@ -51,39 +47,15 @@ export class ViewdetailsComponent implements OnInit {
       //       }
       //     });
       // }
-
-      if (localStorage.getItem('cart')) {
-        this.a = JSON.parse(localStorage.getItem('cart'))
-        let b = this.a.some(item => item.id == this.product.id)
-        if (!b) {
-          this.product.qty = form.value.qty;
-          this.a.push(this.product)
-          console.log(this.product)
-          localStorage.setItem('cart', JSON.stringify(this.a))
-          this.router.navigate(['../../cart']);
-        }else{
-          alert('item is already exists');
-        }
-
-
-      }
-      else {
-
-        this.product.qty = form.value.qty;
-        this.a.push(this.product)
-        localStorage.setItem('cart', JSON.stringify(this.a))
-        console.log(this.a)
-        this.router.navigate(['../../cart']);
-      }
-
-    }
+      
+    
   }
 
   fetchSelectedProduct() {
     this.route.params.subscribe((params) => {
       console.log(params.id);
-      this.http.post('http://localhost:3000/selectedproduct', { 'productid': params.id }).subscribe((data) => {
-        console.log(data);
+      this.http.post('http://localhost:3000/products/viewdetails', { 'productid': params.id }).subscribe((data) => {
+        // console.log(data,'asdas');
         this.product = data;
         // console.log(this.answers);
 

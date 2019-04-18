@@ -1,4 +1,4 @@
-<div class="album py-5">
+<!-- <div class="album py-5">
   <div class="container">
 
     <div class="row">
@@ -12,6 +12,346 @@
             <a routerLink="viewdetails/{{p._id}}"><button type="button" class="btn btn-primary">View Details </button></a>
           </div>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="Style.css"> -->
+</head>
+
+
+<div class="container" *ngIf="param1 === 'all'">
+
+  <h1 align="center" style="padding-top: 50px">Top Picks</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Luxury Designs | Finest Quality Material | 6 Months Warranty</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of ProductsTop">
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <!-- <a routerLink="viewdetails" [queryParams]="{ id: p._id}"> -->
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>View Detail</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p1.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+         <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p2.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p3.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p4.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div> -->
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-lg justify-content-center"
+        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
+        More Collection</button>
+    </div>
+  </div>
+
+  <h1 align="center" style="padding-top: 20px">Deals Of The Day</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">200+ Stylish Designs | Prescription Lens | Improved Clarity</ul>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of Productsdeal">
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>View Detail</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-lg justify-content-center"
+        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
+        More Collection</button>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p4.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p1.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/ProductPhoto.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/ProductPhoto1.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-lg justify-content-center" style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore More Collection</button>
+    </div>
+  </div> -->
+
+  <h1 align="center" style="padding-top: 20px">Trending Products</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of ProductsTrending">
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>View Detail</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-lg justify-content-center"
+        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
+        More Collection</button>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p1.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/ProductPhoto1.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p4.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="margin: 10px;">
+        <img src="../../assets/p3.jpg" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>Tailored Jeans</h5>
+        <p class="price">$ 0.00</p>
+        <p>Some text about the jeans..</p>
+        <p>
+          <a routerLink="viewdetails"> <button>View Detail</button></a>
+        </p>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-lg justify-content-center"
+        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
+        More Collection</button>
+    </div>
+  </div> -->
+
+</div>
+<div class="container" *ngIf="param1 === 'men'">
+
+  <h1 align="center" style="padding-top: 20px">Male Eyeglasses</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of MenEG">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>View Detail</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-lg justify-content-center"
+        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
+        More Collection</button>
+    </div>
+  </div>
+
+
+</div>
+<div class="container" *ngIf="param1 === 'women'">
+  <h1 align="center" style="padding-top: 20px">Female Eyeglasses</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of WomenEG">
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>View Detail</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-lg justify-content-center"
+        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
+        More Collection</button>
     </div>
   </div>
 </div>

@@ -30,7 +30,8 @@ exports.customer_login_customer=(req, res, next) =>{
 
 exports.customer_add_new_customer = (req, res, next) => {
     
-    console.log('Create new Customer')
+    console.log('Create new Customer');
+    console.log(req.body);
 
     //check if there isn't any account associated with the same email
     Customer.findOne({
@@ -39,7 +40,7 @@ exports.customer_add_new_customer = (req, res, next) => {
         if(!customer){
             Customer.create(req.body).then(status => {
                 if(status){
-                    res.send({status: 'Sign Up Successful'})
+                    res.send({status: 'OK'})
                 }
             })
         }
