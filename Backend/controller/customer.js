@@ -240,11 +240,14 @@ exports.customer_get_name = (req, res, next) => {
 
 exports.customer_get_optical_specs = (req, res, next) => {
 
+    console.log("Arhaha ha idhar bhe");
     Customer.findOne({
         Email: req.body.Email
-    }).select('OpticalSpecifications').then((doc) => {
+    }).then((doc) => {
         res.send(
-            doc
+            //doc
+            //.select('OpticalSpecifications')
+           {OpticalSpecifications: doc.OpticalSpecifications , ADDRESS:doc.Address, NAME:doc.CustomerName}
         );
     })
 
