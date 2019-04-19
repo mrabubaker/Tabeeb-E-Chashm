@@ -105,9 +105,15 @@
         <div class="row" style="padding-top: 20px;">
           <a>
 
-            <button type="submit" routerLink="../../Prescription" class="btn btn-outline-primary btn-lg"
-              style="margin-bottom: 15px;">Add to
-              Cart</button>
+            <div><button type="button" routerLink="../../Prescription" class="btn btn-outline-primary btn-lg"
+                style="margin-bottom: 15px; margin-right: 20px;">Buy Now</button>
+              <button type="button" data-toggle="modal" data-target="#wishlistmodal" class="btn btn-outline-success btn-lg"
+                style="margin-bottom: 15px; margin-right: 20px;">Add to Cart
+              </button>
+              <button type="button" class="btn btn-outline-secondary btn-lg"
+               (click)="wishlistproduct()" style="margin-bottom: 15px; margin-right: 20px;">Add to Wishlist
+              </button>
+            </div>
           </a>
         </div>
       </form>
@@ -131,75 +137,77 @@
 
       <div id="accordion">
         <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo">
-                DETAILS
-              </button>
-            </h5>
-          </div>
-          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="card-body">
-              <table class="table">
-                <tr>
-                  <th>Category</th>
-                  <td>{{product.ProductSpecifications.Category}}</td>
-                </tr>
-                <tr>
-                  <th>Shape</th>
-                  <td>{{product.ProductSpecifications.Shape}}</td>
-                </tr>
-                <tr>
-                  <th>Style</th>
-                  <td>{{product.ProductSpecifications.Style}}</td>
-                </tr>
-                <tr>
-                  <th>Rim</th>
-                  <td>{{product.ProductSpecifications.Rim}}</td>
-                </tr>
-                <tr>
-                  <th>Gender</th>
-                  <td>{{product.ProductSpecifications.Gender}}</td>
-                </tr>
-                <tr>
-                  <th>Material</th>
-                  <td>{{product.ProductSpecifications.Material}}</td>
-                </tr>
-                <tr>
-                  <th>Temple Size</th>
-                  <td>{{product.ProductSpecifications.TempleSize}}</td>
-                </tr>
-                <tr>
-                  <th>Bridge Size</th>
-                  <td>{{product.ProductSpecifications.BridgeSize}}</td>
-                </tr>
-                <tr>
-                  <th>Eye Size</th>
-                  <td>{{product.ProductSpecifications.EyeSize}}</td>
-                </tr>
-                <tr>
-                  <th>Color</th>
-                  <td>{{product.ProductSpecifications.Color}}</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                 aria-controls="collapseOne">
                 DESCRIPTION
               </button>
             </h5>
           </div>
 
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               {{product.Description}}
               <!-- The glasses  -->
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="true" aria-controls="collapseTwo">
+                  DETAILS
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <table class="table">
+                  <tr>
+                    <th>Category</th>
+                    <td>{{product.ProductSpecifications.Category}}</td>
+                  </tr>
+                  <tr>
+                    <th>Shape</th>
+                    <td>{{product.ProductSpecifications.Shape}}</td>
+                  </tr>
+                  <tr>
+                    <th>Style</th>
+                    <td>{{product.ProductSpecifications.Style}}</td>
+                  </tr>
+                  <tr>
+                    <th>Rim</th>
+                    <td>{{product.ProductSpecifications.Rim}}</td>
+                  </tr>
+                  <tr>
+                    <th>Gender</th>
+                    <td>{{product.ProductSpecifications.Gender}}</td>
+                  </tr>
+                  <tr>
+                    <th>Material</th>
+                    <td>{{product.ProductSpecifications.Material}}</td>
+                  </tr>
+                  <tr>
+                    <th>Temple Size</th>
+                    <td>{{product.ProductSpecifications.TempleSize}}</td>
+                  </tr>
+                  <tr>
+                    <th>Bridge Size</th>
+                    <td>{{product.ProductSpecifications.BridgeSize}}</td>
+                  </tr>
+                  <tr>
+                    <th>Eye Size</th>
+                    <td>{{product.ProductSpecifications.EyeSize}}</td>
+                  </tr>
+                  <tr>
+                    <th>Color</th>
+                    <td>{{product.ProductSpecifications.Color}}</td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -234,6 +242,33 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="wishlistmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog " role="document" style="width: 100%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="padding: 30px; padding-bottom: 0px;">Wishlist</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="padding: 30px;">
+          <p>Choose to Proceed</p>
+          <div>
+              <button type="submit" (click)="continue()" data-dismiss="modal" class="btn btn-outline-primary btn-lg"
+              style="margin-bottom: 15px; margin-right: 20px;">Continue</button>
+              <button type="submit" (click)="checkout()" data-dismiss="modal" class="btn btn-outline-danger btn-lg"
+                style="margin-bottom: 15px;">Check Out</button>
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
   </div>
 </div>
 

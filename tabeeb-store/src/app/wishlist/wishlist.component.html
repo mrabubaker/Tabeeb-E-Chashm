@@ -1,0 +1,34 @@
+<app-unavbar></app-unavbar>
+<!-- <button type="button" class="btn btn-primary" (click)="AddtoOrder()" style="float:right; margin: 20px">Checkout</button> -->
+<h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Wishlist</h2>
+<div class="table-responsive" style="padding-left:30px; padding-right:30px">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Product Name</th>
+        <!-- <th>No. of Items</th> -->
+        <th>Unit Price</th>
+        <!-- <th>Password</th> -->
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of product.Array">
+        <td><img src="{{p.ProductPhoto}}" alt="" style="width:100px; height: 70px;"></td>
+        <td>{{p.ProductName}}</td>
+        <!-- <td> <input type="number" min="1" value={{p.qty}} max={{p.noOfItems}} name="quantitiyselected" style="width: 50px" (change)="changeQuantity($event)"> </td> -->
+        <td>Rs. {{p.Price}}</td>
+        <!-- <td>{{p.noOfItems}}</td> -->
+        <!-- <td>{{q.password}}</td> -->
+        <td>
+          <button type="button" class="btn btn-primary" (click)="RemoveWishlistProduct(p.ProductName)"
+            style="margin-right: 20px;">Remove</button>
+          <button type="button" class="btn btn-primary" [routerLink]="['/viewdetails', p._id]">ViewDetails</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <a routerLink="../addproduct"><button type="button" class="btn btn-primary btn-lg">Add Product</button></a> -->
+</div>

@@ -17,6 +17,8 @@ import {PrescriptionComponent} from './prescription/prescription.component';
 import {OrderComponent} from './order/order.component';
 import {OrdermanagementComponent} from './ordermanagement/ordermanagement.component';
 import {OpencameraComponent} from './opencamera/opencamera.component';
+import {WishlistComponent} from './wishlist/wishlist.component';
+import {AddressdetailsComponent} from './addressdetails/addressdetails.component';
 
 
 const routes: Routes = [
@@ -42,6 +44,8 @@ const routes: Routes = [
     { path: 'Prescription', component:PrescriptionComponent},
     { path: 'order', component:OrderComponent},
     { path: 'camera', component: OpencameraComponent},
+    { path: 'wishlist', component: WishlistComponent},
+    { path: 'addressDetails', component: AddressdetailsComponent},
     
 ]
 

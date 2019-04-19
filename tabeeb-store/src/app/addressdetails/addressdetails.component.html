@@ -1,0 +1,88 @@
+<form #addAddress="ngForm" (submit)="AdduserAddress(addAddress)">
+<div
+  style="padding: 44.5px;  background: -webkit-linear-gradient(to right, #e63b07, #f3f3f3d7); background: linear-gradient(to right, #e63b07, #f3f3f3d7);">
+
+  <div class="container"
+    style="padding: 30px; max-width: 500px; width: 100%; margin: 0 auto; position: relative; background: white; border-radius: 10px;">
+
+    <h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Address Details</h2>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Building</label>
+        <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
+          placeholder="building or Flat" name="buildingtext">
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Street</label>
+        <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Area or Street" name="streettext">
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">City</label>
+        <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
+          placeholder="Enter City" name="citytext">
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">LandMark</label>
+        <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp"
+          placeholder="Land mark(Optional)" name="landmarktext">
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Province</label>
+        <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp"
+          placeholder="Enter Province" name="provincetext">
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Postal Code</label>
+        <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp"
+          placeholder="Postal Code/Zip Code" name="postalcodetext">
+      </div>
+    </div>
+
+    <!-- <div class="col">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail4"
+            aria-describedby="emailHelp" placeholder="Enter Name" name="nametext">
+        </div>
+      </div> -->
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Mobile Number</label>
+        <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp"
+          placeholder="Mobile Number" name="numbertext">
+      </div>
+    </div>
+
+
+    <div class="col">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Alternative Number</label>
+        <input type="text" autofocus ngModel class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp"
+          placeholder="Alternative Number(Optional)" name="alternativetext">
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-primary" style="background: #ca4c25; color: black">Done</button>
+    </div>
+  </div>
+</div>
+</form>

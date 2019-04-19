@@ -35,6 +35,7 @@ export class ProductsComponent implements OnInit {
     else if (this.param1 === 'women') {
       this.categoryProducts('Female Sunglasses', 'b');
     }
+    
     else {
       this.param1 = 'all';
       this.FetchProducts({ TAG: 'Trending' }, 'a');

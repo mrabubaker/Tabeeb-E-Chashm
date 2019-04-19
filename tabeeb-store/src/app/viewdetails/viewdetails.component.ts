@@ -12,12 +12,14 @@ import { forEach } from '@angular/router/src/utils/collection';
 export class ViewdetailsComponent implements OnInit {
 
   constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) { }
-  a = []
+  cartarray = []
+  wishlistarray = []
   product;
 
 
   ngOnInit() {
     this.fetchSelectedProduct();
+    window.scrollTo(0, 0);
   }
 
   // onAddToCart(form: NgForm) {
@@ -53,15 +55,67 @@ export class ViewdetailsComponent implements OnInit {
 
   fetchSelectedProduct() {
     this.route.params.subscribe((params) => {
-      console.log(params.id);
+      // console.log(params.id);
       this.http.post('http://localhost:3000/products/viewdetails', { 'productid': params.id }).subscribe((data) => {
-        // console.log(data,'asdas');
+
         this.product = data;
+        // console.log(this.product, "product data");
         // console.log(this.answers);
 
 
       });
     });
+  }
+
+  // wishlistproduct() {
+  //   alert("Product added to Wishlist");
+
+  //   this.wishlistarray.push(this.product)
+  //   localStorage.setItem('wishlist', JSON.stringify(this.wishlistarray));
+
+
+  // }
+
+  // continue() {
+  //   this.router.navigate(['../'])
+  //   this.cartarray.push(this.product)
+  //   localStorage.setItem('cart', JSON.stringify(this.cartarray));
+
+  // }
+  // checkout() {
+  //   this.router.navigate(['cart'])
+  //   this.cartarray.push(this.product)
+  //   localStorage.setItem('cart', JSON.stringify(this.cartarray));
+  // }
+
+
+  continue() {
+    this.http.post('http://localhost:3000/customers/add_cart', {
+      "Email": localStorage.getItem('email'),
+      "ProductName": this.product.ProductName,
+    }).subscribe((data) => {
+      this.router.navigate(['../'])
+    });
+  }
+
+  checkout() {
+    this.http.post('http://localhost:3000/customers/add_cart', {
+      "Email": localStorage.getItem('email'),
+      "ProductName": this.product.ProductName,
+    }).subscribe((data) => {
+      this.router.navigate(['cart'])
+    });
+  }
+
+  wishlistproduct() {
+    alert("Product added to Wishlist")
+    this.http.post('http://localhost:3000/customers/add_wishlist', {
+      "Email": localStorage.getItem('email'),
+      "ProductName": this.product.ProductName,
+    }).subscribe((data) => {
+      
+    });
+
   }
 
 }

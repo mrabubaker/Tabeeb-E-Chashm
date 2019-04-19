@@ -1,24 +1,39 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Name = new Schema({
-	First_Name: { type: String, required: true},	
-	Last_Name: { type: String, required: true},
-});
-
-var OpticalSpecificationSchema = new Schema({
-	Cylinderical: { type: Number},
-	Spherical: { type: Number},
-	Axis: { type: Number},
-	IPD: { type: Number},
-});
 
 var CustomerSchema = new Schema({
 	CustomerName: {type: String, required: true} ,
 	Password: { type: String, required: true},
 	Email: { type: String, required: true},
-	Phone: { type: Number},
-	Optical_Specifications:  OpticalSpecificationSchema
+	OpticalSpecifications:  {
+		Cylinderical: { 
+			"LeftEye":{type: Number},
+			"RightEye":{type: Number}
+		},
+		Spherical: {
+			"LeftEye":{type: Number},
+			"RightEye":{type: Number}
+		},
+		Axis: {
+			"LeftEye":{type: Number},
+			"RightEye":{type: Number}
+		},
+		IPD: { type: Number}
+	},
+	Wishlist : [{type: String}],
+	Cart: [{type: String}],
+	
+	Address: {
+		Building: {type: String},
+		Street: {type: String},
+		City: {type: String},
+		Landmark: {type: String},
+		Province: {type: String},
+		PostalCode: {type: String},
+		Phone: {type: String},
+		AlternativePhone: { type: String}
+	}
 });
 
 

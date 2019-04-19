@@ -30,7 +30,7 @@
 
 </head>
 <div>
-    <a href="#" style=""><h1 align="center" style="font-family: impact; background: #ec874c; padding: 10px; margin: 0px; font-weight: bold;">Tabeeb E Chashm</h1></a>
+    <h1 align="center" style="font-family: impact; background: #ec874c; padding: 10px; margin: 0px; font-weight: bold;  letter-spacing: 5px;">Tabeeb E Chashm</h1>
 </div>
 
 
@@ -49,8 +49,8 @@
           EYEGLASSES
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/']" [queryParams]="{ order: 'men'}">Men's Eyeglasses</a>
-          <a class="dropdown-item" [routerLink]="['/']" [queryParams]="{ order: 'women'}">Women's Eyeglasses</a>
+          <a class="dropdown-item" [routerLink]="['/']" (click)="productsR()" [queryParams]="{ order: 'men'}">Men's Eyeglasses</a>
+          <a class="dropdown-item" [routerLink]="['/']" (click)="productsR()" [queryParams]="{ order: 'women'}">Women's Eyeglasses</a>
           <!-- <div class="dropdown-divider"></div> -->
         </div>
       </li>
@@ -60,23 +60,27 @@
           SUNGLASSES
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" >Men's Sunglasses</a>
-          <a class="dropdown-item" href="#">Women's Sunglasses</a>
+          <a class="dropdown-item" [routerLink]="['/']" (click)="productsR()" [queryParams]="{ order: 'men'}">Men's Sunglasses</a>
+          <a class="dropdown-item" [routerLink]="['/']" (click)="productsR()" [queryParams]="{ order: 'men'}">Women's Sunglasses</a>
           <!-- <div class="dropdown-divider"></div> -->
         </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="MeasurePD">MEASURE PD</a>
+        <a class="nav-link" (click)="PDclick()">MEASURE PD</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">CART</a>
+        <a class="nav-link" (click)="wishclick()">WISHLIST<span class="badge badge-pill badge-secondary">5</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" (click)="cartclick()">CART<span class="badge badge-pill badge-secondary">2</span></a>
+      </li>
+      
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      <button class="btn btn-outline my-2 my-sm-0" (click)="loginclick()">Login</button>
-          <button class="btn btn-outline my-2 my-sm-0" (click)="logout()">Signout</button>
+      <button *ngIf="!loggedin" class="btn btn-outline my-2 my-sm-0" (click)="loginclick()"> Login</button>
+          <button *ngIf="loggedin" class="btn btn-outline my-2 my-sm-0" (click)="logout()">Signout</button>
     </form>
 
   </div>

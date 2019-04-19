@@ -32,6 +32,10 @@ import { OrdermanagementComponent } from './ordermanagement/ordermanagement.comp
 import { OpencameraComponent } from './opencamera/opencamera.component';
 
 import {WebcamModule} from 'ngx-webcam';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
+import { CategoriesproductsComponent } from './categoriesproducts/categoriesproducts.component';
+import { AddressdetailsComponent } from './addressdetails/addressdetails.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +64,10 @@ import {WebcamModule} from 'ngx-webcam';
     OrderComponent,
     OrdermanagementComponent,
     OpencameraComponent,
+    WishlistComponent,
+    CategoryproductComponent,
+    CategoriesproductsComponent,
+    AddressdetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 import { empty } from 'rxjs';
 
 @Component({
@@ -8,25 +10,43 @@ import { empty } from 'rxjs';
   styleUrls: ['./unavbar.component.css']
 })
 export class UnavbarComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  Customer;
+  loggedin = localStorage.email;
+  constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) { }
 
   ngOnInit() {
+    console.log('on it')
+    this.getName();
   }
 
   logout() {
-    if (localStorage.empty) {
-      alert('You have not already Logged In');
-    }
-    else {
-      localStorage.removeItem('email');
-      localStorage.removeItem('cart');
-      this.router.navigateByUrl('login');
-    }
+    localStorage.removeItem('email');
   }
 
-  loginclick(){
-    this.router.navigateByUrl('login'); 
+  loginclick() {
+    this.router.navigateByUrl('login');
   }
 
+  cartclick() {
+    this.router.navigateByUrl('cart');
+  }
+
+  PDclick() {
+    this.router.navigateByUrl('camera');
+  }
+
+  wishclick() {
+    this.router.navigateByUrl('wishlist');
+  }
+
+  getName() {
+    console.log('okasd')
+    this.http.post('http://localhost:3000/customers/getname', {
+      "Email": localStorage.getItem('email'),
+    }).subscribe((data) => {
+      this.Customer = data;
+      console.log(this.Customer);
+
+    });
+  }
 }
