@@ -4,43 +4,34 @@ const Product = require('./product')
 
 var OrderSchema = new Schema({
 	CustomerEmail: {
-		type: string
-	},
-	Product: [{
-		ProductName: {
-			type: String
-		},
-		No_Of_Items: {
-			type: Number
-		}
-	}],
-	OrderStatus: {
 		type: String
 	},
+	Product: [{
+			type: String
+	}],
+	OrderStatus: {
+		type: String,
+		default: "Ordered"
+	},
 	OpticalSpecifications: {
-		Cylinderical: {
-			"LeftEye": {
-				type: Number
-			},
-			"RightEye": {
-				type: Number
-			}
+
+		"CylindericalLeft": {
+			type: Number
 		},
-		Spherical: {
-			"LeftEye": {
-				type: Number
-			},
-			"RightEye": {
-				type: Number
-			}
+		"CylindericalRight": {
+			type: Number
 		},
-		Axis: {
-			"LeftEye": {
-				type: Number
-			},
-			"RightEye": {
-				type: Number
-			}
+		"SphericalLeft": {
+			type: Number
+		},
+		"SphericalRight": {
+			type: Number
+		},
+		"AxisLeft": {
+			type: Number
+		},
+		"AxisRight": {
+			type: Number
 		},
 		IPD: {
 			type: Number

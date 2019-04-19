@@ -162,6 +162,8 @@ exports.customer_remove_product_from_cart = (req, res, next) => {
 
 };
 
+
+
 exports.customer_get_wishlist = (req, res, next) => {
     console.log("\nCUSTOMER REQUESTING HIS WISHLIST: ", req.body)
 
@@ -247,7 +249,11 @@ exports.customer_get_optical_specs = (req, res, next) => {
         res.send(
             //doc
             //.select('OpticalSpecifications')
-           {OpticalSpecifications: doc.OpticalSpecifications , ADDRESS:doc.Address, NAME:doc.CustomerName}
+            {
+                OpticalSpecifications: doc.OpticalSpecifications,
+                ADDRESS: doc.Address,
+                NAME: doc.CustomerName
+            }
         );
     })
 
@@ -361,5 +367,19 @@ exports.customer_save_opticspecs = (req, res, next) => {
             }
         });
     });
+
+};
+
+exports.customer_empty_cart = (req, res, next) => {
+
+    console.log("Customer REQUESTING removal of Products in Cart: ");
+    Customer.findOneAndUpdate({
+        Email: req.body.Email
+    },{$set: {'Cart':[]}}).then(doc => {
+        console.log(doc);
+        res.send({staus: 'ok'})
+    }).catch(e => {
+        console.log(e);
+    })
 
 };

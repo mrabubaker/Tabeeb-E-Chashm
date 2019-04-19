@@ -37,4 +37,6 @@ router.post('/save_opticspecs', CustomerController.customer_save_opticspecs);
 
 router.post('/get_optical_specs', CustomerController.customer_get_optical_specs);
 
+router.post('/empty_cart', CustomerController.customer_empty_cart);
+
 module.exports = router;
