@@ -27,4 +27,12 @@ router.post('/save_opticspecs', CustomerController.customer_save_opticspecs);
 
 router.post('/save_address', CustomerController.customer_save_address);
 
+router.post('/cart',CustomerController.customer_get_cart);
+
+router.post('/get_optical_specs_and_address', CustomerController.customer_get_optical_specs);
+
+router.post('/check_address_and_specs', CustomerController.customer_check_address_and_specs);
+
+router.post('/empty_cart', CustomerController.customer_empty_cart);
+
 module.exports = router;

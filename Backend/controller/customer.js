@@ -131,7 +131,6 @@ exports.customer_get_name = (req, res, next) => {
             "Customer": doc
         });
     })
-
 };
 
 exports.customer_get_cart_products_details = (req, res, next) => {
@@ -287,4 +286,75 @@ exports.customer_save_address = (req, res, next) => {
 };
 
 
+exports.customer_get_cart = (req, res, next) => {
+    console.log("\nCUSTOMER REQUESTING HIS CART: ", req.body)
 
+    Customer.findOne({
+        Email: req.body.Email
+    }).select('Cart').then((doc) => {
+        res.send(doc)
+    })
+
+};
+
+
+exports.customer_get_optical_specs = (req, res, next) => {
+
+    // console.log("Arhaha ha idhar bhe");
+    Customer.findOne({
+        Email: req.body.Email
+    }).then((doc) => {
+        res.send(
+            //doc
+            //.select('OpticalSpecifications')
+            {
+                OpticalSpecifications: doc.OpticalSpecifications,
+                ADDRESS: doc.Address,
+                NAME: doc.CustomerName
+            }
+        );
+    })
+
+};
+
+
+exports.customer_check_address_and_specs = (req, res, next) => {
+
+    Customer.findOne({
+        Email: req.body.Email
+    }).then((doc) => {
+        if (doc.Address == "{}" && doc.OpticalSpecifications == "{ Cylinderical: {}, Spherical: {}, Axis: {} }") {
+            res.send({
+                status: 'address and optics empty'
+            })
+        } else if (doc.Address == "{}") {
+            res.send({
+                status: 'address empty'
+            })
+        } else if (doc.OpticalSpecifications == "{ Cylinderical: {}, Spherical: {}, Axis: {} }") {
+            res.send({
+                status: 'optics empty'
+            })
+        } else {
+            console.log(doc.Address);
+            console.log(doc.OpticalSpecifications);
+            res.send({
+                status: 'nothing empty'
+            })
+        }
+    })
+};
+
+exports.customer_empty_cart = (req, res, next) => {
+
+    console.log("Customer REQUESTING removal of Products in Cart: ");
+    Customer.findOneAndUpdate({
+        Email: req.body.Email
+    },{$set: {'Cart':[]}}).then(doc => {
+        console.log(doc);
+        res.send({staus: 'ok'})
+    }).catch(e => {
+        console.log(e);
+    })
+
+};
