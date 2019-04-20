@@ -13,6 +13,9 @@ var OrderSchema = new Schema({
 		type: String,
 		default: "Ordered"
 	},
+	OrderTotalPrice: {
+		type: Number
+	},
 	OpticalSpecifications: {
 
 		"CylindericalLeft": {

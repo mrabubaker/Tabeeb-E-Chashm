@@ -240,7 +240,7 @@ exports.customer_get_name = (req, res, next) => {
 
 };
 
-exports.customer_get_optical_specs = (req, res, next) => {
+exports.customer_get_optical_specs_and_address = (req, res, next) => {
 
     console.log("Arhaha ha idhar bhe");
     Customer.findOne({
