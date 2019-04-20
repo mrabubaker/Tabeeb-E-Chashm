@@ -32,7 +32,6 @@ export class PrescriptionComponent implements OnInit {
     }).subscribe((data) => {
       if(data['status'] == 'ok')
       {
-        console.log(form.value,"No values");
         this.route.navigateByUrl('addressDetails');
       }
       else{

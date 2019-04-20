@@ -1,0 +1,118 @@
+<form #placeorderF="ngForm" (submit)="PlaceOrder(placeorderF)"
+    style="padding-top: 40px; padding-bottom: 40px; padding-left: 20px; padding-right: 20px; background: -webkit-linear-gradient(to bottom, #e63b07, #f3f3f3d7); background: linear-gradient(to bottom, #e63b07, #f3f3f3d7);">
+    <div style="display: flex; justify-content: center; width: 100%">
+        <h3 style="font-family: century gothic; color: black">Order Summary</h3>
+    </div>
+    <div>
+        <table class="table table-striped" style="border: solid black 2px" style="background: white;">
+
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Customer Details</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Name</th>
+                    <td>{{customerdetail.NAME}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Address</th>
+                    <td>{{customerdetail.ADDRESS.Building}} {{customerdetail.ADDRESS.Street}}
+                        {{customerdetail.ADDRESS.Landmark}} {{customerdetail.ADDRESS.City}} </td>
+                </tr>
+                <tr>
+                    <th scope="row">Phone Number</th>
+                    <td>{{customerdetail.ADDRESS.Phone}}</td>
+                </tr>
+                <tr>
+                    <th>Edit Details</th>
+                    <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <div style="display: flex; width: 30%">
+                <p style="font-family: century gothic; color: white;" (click)="changeaddress()">Change Personal Details</p>
+            </div> -->
+    </div>
+
+    <div>
+        <table class="table table-striped" style="border: solid black 2px" style="background: white;">
+
+            <thead class="thead-dark">
+                <tr>
+                    <th></th>
+                    <th scope="col">Sphere</th>
+                    <th scope="col">Cylinder</th>
+                    <th scope="col">Axis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Left Eye</th>
+                    <td>{{customerdetail.OpticalSpecifications.Spherical.LeftEye}}</td>
+                    <td>{{customerdetail.OpticalSpecifications.Cylinderical.LeftEye}}</td>
+                    <td>{{customerdetail.OpticalSpecifications.Axis.LeftEye}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Right Eye</th>
+                    <td>{{customerdetail.OpticalSpecifications.Spherical.RightEye}}</td>
+                    <td>{{customerdetail.OpticalSpecifications.Cylinderical.RightEye}}</td>
+                    <td>{{customerdetail.OpticalSpecifications.Axis.RightEye}}</td>
+                </tr>
+                <tr>
+                    <th>IPD</th>
+                    <td>{{customerdetail.OpticalSpecifications.IPD}}</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th>Edit Prescription</th>
+                    <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+    <div>
+        <table class="table " style="border: solid black 2px" style="background: white;">
+
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of product.Array">
+                    <td><img src="{{p.ProductPhoto}}" alt="" style="width:100px; height: 70px;"></td>
+                    <td>{{p.ProductName}}</td>
+                    <!-- <td> <input type="number" min="1" value={{p.qty}} max={{p.noOfItems}} name="quantitiyselected" style="width: 50px" (change)="changeQuantity($event)"> </td> -->
+                    <td>Rs. {{p.Price}}</td>
+                    <!-- <td>{{p.noOfItems}}</td> -->
+                    <!-- <td>{{q.password}}</td> -->
+
+                </tr>
+                <tr>
+                    <th>Total Price:</th>
+                    <td></td>
+                    <td>Rs. {{sum}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+        <button type="button" class="btn btn-primary btn-lg justify-content-center"
+            style="font-family: century gothic; background: #ca4c25; color: black" (click)="placeorder()">PLACE ORDER</button>
+    </div>
+
+</form>

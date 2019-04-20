@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./addressdetails.component.css']
 })
 export class AddressdetailsComponent implements OnInit {
+customerdetail;
 
   constructor( private http: HttpClient, private route: Router) { }
 
   ngOnInit() {
+
   }
 
   AdduserAddress(form: NgForm){
@@ -30,8 +32,8 @@ export class AddressdetailsComponent implements OnInit {
 
     }).subscribe((data) => {
       if((data['status'] == 'OK')){
-        console.log("Address Added");
-        this.route.navigateByUrl('');
+        // console.log("Address Added");
+        this.route.navigateByUrl('orderdetails');
       } 
       else{
         console.log("Error in Address");
@@ -39,4 +41,5 @@ export class AddressdetailsComponent implements OnInit {
     });
   }
 
+  
 }

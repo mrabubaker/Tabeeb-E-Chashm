@@ -19,6 +19,8 @@ import {OrdermanagementComponent} from './ordermanagement/ordermanagement.compon
 import {OpencameraComponent} from './opencamera/opencamera.component';
 import {WishlistComponent} from './wishlist/wishlist.component';
 import {AddressdetailsComponent} from './addressdetails/addressdetails.component';
+import {OrdersummaaryComponent} from './ordersummaary/ordersummaary.component';
+import {OrderdetailsComponent} from './orderdetails/orderdetails.component';
 
 
 const routes: Routes = [
@@ -46,6 +48,8 @@ const routes: Routes = [
     { path: 'camera', component: OpencameraComponent},
     { path: 'wishlist', component: WishlistComponent},
     { path: 'addressDetails', component: AddressdetailsComponent},
+    { path: 'ordersummary', component: OrdersummaaryComponent},
+    { path: 'orderdetails', component: OrderdetailsComponent},
     
 ]
 

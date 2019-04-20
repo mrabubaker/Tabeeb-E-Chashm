@@ -15,12 +15,12 @@ export class UnavbarComponent implements OnInit {
   constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) { }
 
   ngOnInit() {
-    console.log('on it')
     this.getName();
   }
 
   logout() {
     localStorage.removeItem('email');
+    this.router.navigateByUrl('login');
   }
 
   loginclick() {
@@ -39,8 +39,12 @@ export class UnavbarComponent implements OnInit {
     this.router.navigateByUrl('wishlist');
   }
 
+  home(){
+    this.router.navigateByUrl('');
+  }
+
   getName() {
-    console.log('okasd')
+    // console.log('okasd')
     this.http.post('http://localhost:3000/customers/getname', {
       "Email": localStorage.getItem('email'),
     }).subscribe((data) => {

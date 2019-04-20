@@ -108,14 +108,28 @@ export class ViewdetailsComponent implements OnInit {
   }
 
   wishlistproduct() {
-    alert("Product added to Wishlist")
     this.http.post('http://localhost:3000/customers/add_wishlist', {
       "Email": localStorage.getItem('email'),
       "ProductName": this.product.ProductName,
     }).subscribe((data) => {
-      
+      alert("Product added to Wishlist");
+      this.router.navigateByUrl('');
     });
 
   }
 
+  buynow() {
+
+    this.http.post('http://localhost:3000/customers/add_cart', {
+      "Email": localStorage.getItem('email'),
+      "ProductName": this.product.ProductName,
+    }).subscribe((data) => {
+      this.router.navigate(['cart'])
+
+    });
+  }
+
+
+
 }
+

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   product;
 
-  constructor(private http: HttpClient, private route: Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
 
@@ -37,7 +37,7 @@ export class CartComponent implements OnInit {
   AddtoOrder() {
     //alert("chal rha ha")
     // console.log(this.product);
-    this.route.navigate(['order']);
+    this.router.navigate(['order']);
 
   }
 
@@ -80,6 +80,28 @@ export class CartComponent implements OnInit {
       this.getCart();
     });
 
+  }
+
+  checkdetails(){
+    this.http.post('http://localhost:3000/customers/check_address_and_specs', {
+      "Email": localStorage.getItem('email'),
+    }).subscribe((data) => {
+
+      if (data['status'] === 'address and optics empty') {
+        this.router.navigateByUrl('Prescription')
+      }
+      else  if (data['status'] === 'address empty') {
+        this.router.navigateByUrl('addressDetails')
+      }
+      
+      else  if (data['status'] === 'optics empty') {
+        this.router.navigateByUrl('Prescription')
+      }
+
+      else if (data['status'] === 'nothing empty') {
+        this.router.navigateByUrl('orderdetails')
+      }
+    });
   }
 
 }

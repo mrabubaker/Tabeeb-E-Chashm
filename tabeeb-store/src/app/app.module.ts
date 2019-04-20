@@ -36,6 +36,8 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
 import { CategoriesproductsComponent } from './categoriesproducts/categoriesproducts.component';
 import { AddressdetailsComponent } from './addressdetails/addressdetails.component';
+import { OrdersummaaryComponent } from './ordersummaary/ordersummaary.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +70,8 @@ import { AddressdetailsComponent } from './addressdetails/addressdetails.compone
     CategoryproductComponent,
     CategoriesproductsComponent,
     AddressdetailsComponent,
+    OrdersummaaryComponent,
+    OrderdetailsComponent,
   ],
   imports: [
     BrowserModule,
