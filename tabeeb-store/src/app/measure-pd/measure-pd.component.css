@@ -1,5 +1,6 @@
 .wrap{
-    
+    margin-left: 25%;
+    margin-top: 5%;
     width: 640px;
     height: 480px;
     border : 2px solid gray;
@@ -10,8 +11,6 @@
     width: 25px;
     height: 25px;
     border-radius: 5px;
-    left: 40%;
-    top: 25%;
     /* background-color: blacK; */
   }
   
@@ -20,8 +19,7 @@
     height: 25px;
     border-radius: 5px;
   
-    left: 55%;
-    top: 25%;
+    left: 95%;
     /* background-color: black; */
   }
 
@@ -30,8 +28,6 @@
     width: 10px;
     height: 100px;
     border-radius: 3px;
-    left: 30%;
-    top: 76%;
     background-color: black;
   }
 
@@ -39,7 +35,6 @@
     width: 10px;
     height: 100px;
     border-radius: 3px;
-    left: 70%;
-    top: 70%;
+    left:98%;
     background-color: black;
   }

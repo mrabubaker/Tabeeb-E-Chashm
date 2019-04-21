@@ -6,9 +6,6 @@ const morgan = require('morgan');
 //set up express app
 const app = express();
 
-const port = process.env.PORT || 3000;
-
-
 //connect to monogdb
  mongoose.connect('mongodb://localhost/Chashm', { useNewUrlParser: true });
 //CONTAINER-NAME:port
@@ -40,6 +37,7 @@ app.use((req, res, next) => {
 
 app.use('/products',require('./routes/product'));
 app.use('/customers',require('./routes/customer'));
+app.use('/orders',require('./routes/order'));
 
 
-app.listen(port, () => console.log(`Listening on ${port}`));
+module.exports = app;

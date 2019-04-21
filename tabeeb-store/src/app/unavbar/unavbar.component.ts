@@ -53,4 +53,8 @@ export class UnavbarComponent implements OnInit {
 
     });
   }
+
+  searchclick(){
+    this.router.navigateByUrl('searchproducts');
+  }
 }

@@ -30,10 +30,18 @@ export class ProductsComponent implements OnInit {
       });
 
     if (this.param1 === 'men') {
-      this.categoryProducts('Male Sunglasses', 'a');
+      this.categoryProducts('Men Sunglasses', 'a');
     }
     else if (this.param1 === 'women') {
-      this.categoryProducts('Female Sunglasses', 'b');
+      this.categoryProducts('Women Sunglasses', 'b');
+    }
+
+    else if (this.param1 === 'menS') {
+      this.categoryProducts('Men Eyeglasses', 'c');
+    }
+
+    else if (this.param1 === 'womenS') {
+      this.categoryProducts('Women Eyeglasses', 'd');
     }
     
     else {

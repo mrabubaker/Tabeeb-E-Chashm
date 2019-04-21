@@ -25,23 +25,25 @@ export class ProductdetailsComponent implements OnInit {
 
     }).subscribe(data => {
       //alert(data); 
-      // console.log(data[0]);
+      console.log(data);
       this.products = data;
       if (data['status'] == 'OK') {
 
         //alert("Login Successful");
       }
       else {
-        console.log("Error Login!");
+        console.log("Error");
       }
     });
   }
 
-  deleteproduct(id) {
-    //alert(id);
-    this.http.post('http://localhost:3000/deleteproduct', { 'id': id }).subscribe((data) => {
+  deleteproduct(name) {
+    console.log("working delete products");
+    this.http.post('http://localhost:3000/products/deleteproduct', {
+      "ProductName": name,
+    }).subscribe(data => {
       this.FetchProducts();
-
     });
+
   }
 }

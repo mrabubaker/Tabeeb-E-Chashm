@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrdersummaaryComponent } from './ordersummaary.component';
+import { TryonCameraComponent } from './tryon-camera.component';
 
-describe('OrdersummaaryComponent', () => {
-  let component: OrdersummaaryComponent;
-  let fixture: ComponentFixture<OrdersummaaryComponent>;
+describe('TryonCameraComponent', () => {
+  let component: TryonCameraComponent;
+  let fixture: ComponentFixture<TryonCameraComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrdersummaaryComponent ]
+      declarations: [ TryonCameraComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrdersummaaryComponent);
+    fixture = TestBed.createComponent(TryonCameraComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

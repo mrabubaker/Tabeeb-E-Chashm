@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ordermanagement',
@@ -6,10 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ordermanagement.component.css']
 })
 export class OrdermanagementComponent implements OnInit {
-
-  constructor() { }
+  order: any;
+  constructor( private http: HttpClient, private route: Router) { }
 
   ngOnInit() {
+    this.Details();
   }
+
+
+  Details() {
+    this.http.post('http://localhost:3000/orders/all_order', {
+      "CustomerEmail": localStorage.getItem('email'),
+
+
+    }).subscribe((data) => {
+      this.order = data;
+      this.order.Array.forEach(element => {
+
+      });
+      
+    });
+
+  }
+
 
 }

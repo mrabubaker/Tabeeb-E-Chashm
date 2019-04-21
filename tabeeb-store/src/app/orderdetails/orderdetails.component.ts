@@ -10,8 +10,10 @@ import { Router } from '@angular/router';
 export class OrderdetailsComponent implements OnInit {
   customerdetail;
   product;
-  sum:any;
-  constructor(private http: HttpClient, private route: Router) { 
+  sum: any;
+  optics: any;
+  photos = [];
+  constructor(private http: HttpClient, private route: Router) {
 
   }
 
@@ -19,7 +21,7 @@ export class OrderdetailsComponent implements OnInit {
     this.sum = 0;
     this.getDetails();
     this.getCart();
-  
+
   }
 
   getDetails() {
@@ -29,7 +31,24 @@ export class OrderdetailsComponent implements OnInit {
 
     }).subscribe((data) => {
       this.customerdetail = data;
-      console.log(this.customerdetail.ADDRESS, "working");
+      // console.log(this.customerdetail.ADDRESS, "working");
+      this.optics = {
+        "CylindericalLeft":
+          this.customerdetail.OpticalSpecifications.Cylinderical.LeftEye,
+        "CylindericalRight":
+          this.customerdetail.OpticalSpecifications.Cylinderical.RightEye,
+        "SphericalLeft":
+          this.customerdetail.OpticalSpecifications.Spherical.LeftEye,
+        "SphericalRight":
+          this.customerdetail.OpticalSpecifications.Spherical.RightEye,
+        "AxisLeft":
+          this.customerdetail.OpticalSpecifications.Axis.LeftEye,
+        "AxisRight":
+          this.customerdetail.OpticalSpecifications.Axis.RightEye,
+        "IPD":
+          this.customerdetail.OpticalSpecifications.IPD,
+      }
+
     });
   }
 
@@ -41,18 +60,31 @@ export class OrderdetailsComponent implements OnInit {
       this.product = data;
       //console.log(this.product);
       this.product.Array.forEach(product => {
-        this.sum = this.sum + product.Price
+        this.sum = this.sum + product.Price;
+        this.photos.push(product.ProductName);
       });
-      console.log(this.sum)
+      // console.log(this.sum)
     });
 
   }
 
-  changeaddress(){
+  changeaddress() {
     this.route.navigateByUrl('addressdetails');
   }
 
-  placeorder(){
-    this.route.navigateByUrl('order');
+  placeorder() {
+    // alert("working");
+    this.http.post('http://localhost:3000/orders/place_order', {
+      "CustomerEmail": localStorage.getItem('email'),
+      "Product": this.photos,
+      "OpticalSpecifications": this.optics,
+      "Shipping_Address": this.customerdetail.ADDRESS,
+      "OrderTotalPrice": this.sum,
+
+
+    }).subscribe((data) => {
+      this.route.navigateByUrl('orders');
+    });
+
   }
 }

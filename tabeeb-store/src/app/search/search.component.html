@@ -1,0 +1,92 @@
+<app-unavbar></app-unavbar>
+
+<div class="btn-group">
+  <button class="btn  btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" style="margin-left: 80px; margin-top: 20px; width: 180px; border: 2px solid #ec6834">
+    Style
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Aviator</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Cat Eye</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Wayfarer</a>
+    <div class="dropdown-divider"></div>
+  </div>
+</div>
+<div class="btn-group">
+  <button class="btn  btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" style="margin-left: 20px; margin-top: 20px; width: 180px; border: 2px solid #ec6834">
+    Shape
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Aviator</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Cat Eye</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Wayfarer</a>
+    <div class="dropdown-divider"></div>
+  </div>
+</div>
+<div class="btn-group">
+  <button class="btn  btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" style="margin-left: 20px; margin-top: 20px; width: 180px; border: 2px solid #ec6834">
+    Rim
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Aviator</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Cat Eye</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Wayfarer</a>
+    <div class="dropdown-divider"></div>
+  </div>
+</div>
+<div class="btn-group">
+  <button class="btn  btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" style="margin-left: 20px; margin-top: 20px; width: 180px; border: 2px solid #ec6834">
+    Category
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" [routerLink]="['/searchproducts']" (click)="productsR()" [queryParams]="{ searching: 'mensungalsses'}">Men Sunglasses</a>
+    <div class="dropdown-divider" ></div>
+    <a class="dropdown-item" [routerLink]="['/searchproducts']" (click)="productsR()" [queryParams]="{ searching: 'womensungalsses'}">Women Sunglasses</a>
+    <div class="dropdown-divider" ></div>
+    <a class="dropdown-item" [routerLink]="['/searchproducts']" (click)="productsR()" [queryParams]="{ searching: 'meneyeglasses'}">Men Eyeglasses</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" [routerLink]="['/searchproducts']" (click)="productsR()" [queryParams]="{ searching: 'womeneyeglasses'}">Women Eyeglasses</a>
+  </div>
+</div>
+
+<div class="btn-group">
+  <button class="btn  btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" style="margin-left: 20px; margin-top: 20px; width: 180px; border: 2px solid #ec6834">
+    Material
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Aviator</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Cat Eye</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Wayfarer</a>
+    <div class="dropdown-divider"></div>
+  </div>
+</div>
+
+<div class="btn-group">
+  <button class="btn  btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" style="margin-left: 20px; margin-top: 20px; width: 180px; border: 2px solid #ec6834">
+    Size
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Aviator</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Cat Eye</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Wayfarer</a>
+    <div class="dropdown-divider"></div>
+  </div>
+</div>
+
+
+<app-searchproducts></app-searchproducts>

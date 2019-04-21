@@ -1,94 +1,27 @@
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<form #placeorderF="ngForm" (submit)="PlaceOrder(placeorderF)"
+  style="padding-top: 40px; padding-bottom: 40px; padding-left: 20px; padding-right: 20px; background: -webkit-linear-gradient(to bottom, #e63b07, #f3f3f3d7); background: linear-gradient(to bottom, #e63b07, #f3f3f3d7); height: 100%;">
+  <div style="display: flex; justify-content: center; width: 100%">
+    <h4 style="font-family: century gothic; color: black">Order Summary</h4>
+  </div>
+  <div>
+    <table class="table" style="border: solid black 2px" style="background: white;">
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-</head>
-<div
-  style="height: 100%; padding-left: 20px; padding-right: 20px; padding-top: 50px;  background: -webkit-linear-gradient(to right, #e63b07, #f3f3f3d7); background: linear-gradient(to right, #e63b07, #f3f3f3d7);">
-  <div style="background: white; border-radius: 7px; padding-top: 30px;">
-    <h2 style="text-align: center;">Order</h2>
-    <div class="table-responsive" style="padding-left:30px; padding-right:30px">
-      <table class="table table-sm">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Product Name</th>
-            <th>Quantity</th>
-            <th>Unit Price</th>
-            <th>Status</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- <tr *ngFor="let p of product"> -->
-            <tr>
-            <td><img src="../../assets/Round-Gray-1.jpg" alt="" style="width:100px; height:70px;"></td>
-            <td>{{p.Productname}}</td>
-            <td> <input type="number" min="1" value={{p.qty}} max={{p.noOfItems}} name="quantitiyselected"
-                style="width: 50px" (change)="changeQuantity($event)"> </td>
-            <td>Rs. {{p.price}}</td>
-            <td>
-              <div ng-switch="myVar">
-                <div ng-switch-when="Dispatched">
-                  <h6>Dispatched</h6>
-                </div>
-                <div ng-switch-when="Cargo">
-                  <h6>Cargo</h6>
-                </div>
-                <div ng-switch-when="Deliver">
-                  <h6>Delivered</h6>
-                </div>
-              </div>
-            </td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Update
-                Status</button>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog " role="document" style="width: 100%;">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="padding: 30px; padding-bottom: 0px;">Update Order
-              Status</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" style="padding: 30px;">
-            <div class="form-check">
-              <input class="radio" type="radio" name="exampleRadios" ng-model="myVar" id="exampleRadios1"
-                value="Dispatched">
-              <label class="form-check-label" for="exampleRadios1">
-                Dispached
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="radio" type="radio" name="exampleRadios" ng-model="myVar" id="exampleRadios2" value="Cargo">
-              <label class="form-check-label" for="exampleRadios2">
-                Cargo Company
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="radio" type="radio" name="exampleRadios" ng-model="myVar" id="exampleRadios3"
-                value="Deliver">
-              <label class="form-check-label" for="exampleRadios3">
-                Deliver
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
+      <thead class="thead-dark">
+        <tr>
+          <th></th>
+          <th scope="col">Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of order.Array">
+          <th><img src="{{p.productphoto}}" alt="" style="width: 100px; height: 70px;"></th>
+          <td>{{p.productname}}</td>
+          <td>{{p.status}}</td>
+          <td>Rs.{{p.productprice}}</td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+  </div>

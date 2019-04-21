@@ -70,9 +70,9 @@
           SUNGLASSES
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/']" (click)="productsR()" [queryParams]="{ order: 'men'}">Men's
+          <a class="dropdown-item" [routerLink]="['/']" (click)="productsR()" [queryParams]="{ order: 'menS'}">Men's
             Sunglasses</a>
-          <a class="dropdown-item" [routerLink]="['/']" (click)="productsR()" [queryParams]="{ order: 'men'}">Women's
+          <a class="dropdown-item" [routerLink]="['/']" (click)="productsR()" [queryParams]="{ order: 'womenS'}">Women's
             Sunglasses</a>
           <!-- <div class="dropdown-divider"></div> -->
         </div>
@@ -89,8 +89,8 @@
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="searchclick()">Search</button>
       <button *ngIf="!loggedin" class="btn btn-outline my-2 my-sm-0" (click)="loginclick()"> Login</button>
       <button *ngIf="loggedin" class="btn btn-outline my-2 my-sm-0" (click)="logout()">Signout</button>
     </form>

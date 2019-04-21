@@ -14,14 +14,15 @@ import {ProductdetailsComponent} from './productdetails/productdetails.component
 import {ViewdetailsComponent} from './viewdetails/viewdetails.component';
 import {MeasurePDComponent} from './measure-pd/measure-pd.component';
 import {PrescriptionComponent} from './prescription/prescription.component';
-import {OrderComponent} from './order/order.component';
 import {OrdermanagementComponent} from './ordermanagement/ordermanagement.component';
 import {OpencameraComponent} from './opencamera/opencamera.component';
 import {WishlistComponent} from './wishlist/wishlist.component';
 import {AddressdetailsComponent} from './addressdetails/addressdetails.component';
-import {OrdersummaaryComponent} from './ordersummaary/ordersummaary.component';
 import {OrderdetailsComponent} from './orderdetails/orderdetails.component';
-
+import {UserordersComponent} from './userorders/userorders.component';
+import {TryonCameraComponent} from './tryon-camera/tryon-camera.component';
+import { TryonComponent} from './tryon/tryon.component';
+import {SearchComponent} from './search/search.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -30,7 +31,7 @@ const routes: Routes = [
     children: [
         { path: 'customer', component: DashboardComponent},
         { path: 'productdetail', component: ProductdetailsComponent},
-        { path: 'addproduct', component: AddProductComponent},
+        { path: '', component: AddProductComponent},
         { path: 'ordermanagement', component: OrdermanagementComponent},
         { path: 'discount', component: DiscountsComponent},
         { path: 'Ads', component: AdsComponent},
@@ -44,12 +45,15 @@ const routes: Routes = [
     // { path: 'viewdetails/:id', component:ViewdetailsComponent}
     { path: 'viewdetails/:id', component:ViewdetailsComponent},
     { path: 'Prescription', component:PrescriptionComponent},
-    { path: 'order', component:OrderComponent},
     { path: 'camera', component: OpencameraComponent},
     { path: 'wishlist', component: WishlistComponent},
     { path: 'addressDetails', component: AddressdetailsComponent},
-    { path: 'ordersummary', component: OrdersummaaryComponent},
     { path: 'orderdetails', component: OrderdetailsComponent},
+    { path: 'orders', component: UserordersComponent},
+    { path: 'opencamera', component: TryonCameraComponent},
+    { path: 'tryon', component: TryonComponent},
+    { path: 'searchproducts', component: SearchComponent},
+    
     
 ]
 

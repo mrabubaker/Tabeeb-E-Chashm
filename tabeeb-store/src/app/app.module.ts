@@ -27,7 +27,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TestComponent } from './test/test.component';
 import { BlogComponent } from './blog/blog.component';
 import { FooterComponent } from './footer/footer.component';
-import { OrderComponent } from './order/order.component';
 import { OrdermanagementComponent } from './ordermanagement/ordermanagement.component';
 import { OpencameraComponent } from './opencamera/opencamera.component';
 
@@ -36,8 +35,13 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
 import { CategoriesproductsComponent } from './categoriesproducts/categoriesproducts.component';
 import { AddressdetailsComponent } from './addressdetails/addressdetails.component';
-import { OrdersummaaryComponent } from './ordersummaary/ordersummaary.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { UserordersComponent } from './userorders/userorders.component';
+import { TryonComponent } from './tryon/tryon.component';
+import { TryonCameraComponent } from './tryon-camera/tryon-camera.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchComponent } from './search/search.component';
+import { SearchproductsComponent } from './searchproducts/searchproducts.component';
 
 @NgModule({
   declarations: [
@@ -63,15 +67,18 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
     TestComponent,
     BlogComponent,
     FooterComponent,
-    OrderComponent,
     OrdermanagementComponent,
     OpencameraComponent,
     WishlistComponent,
     CategoryproductComponent,
     CategoriesproductsComponent,
     AddressdetailsComponent,
-    OrdersummaaryComponent,
     OrderdetailsComponent,
+    UserordersComponent,
+    TryonComponent,
+    TryonCameraComponent,
+    SearchComponent,
+    SearchproductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +86,9 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
     FormsModule,
     HttpClientModule,
     NoopAnimationsModule,
-    WebcamModule
+    WebcamModule,
+    BrowserModule, 
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

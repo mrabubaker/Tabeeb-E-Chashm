@@ -29,6 +29,8 @@ export class AddProductComponent implements OnInit {
   SeparattedColor;
   variablegender;
   Separattedgender;
+  variableTag;
+  SepratedTag;
 
 
   ngOnInit() {
@@ -64,6 +66,11 @@ export class AddProductComponent implements OnInit {
     this.Separattedgender = this.variablegender.split(",");
     console.log(this.Separattedgender);
 
+    this.variableTag = form.value.tagtext;
+    this.SepratedTag = this.variableTag.split(",");
+    console.log(this.SepratedTag);
+
+
     this.http.post('http://localhost:3000/products/create_product', {
       //'product':form.value
       // 'Productid': form.value.productidtext,
@@ -86,7 +93,7 @@ export class AddProductComponent implements OnInit {
       'AllPhotos': [this.imagePreview1, this.imagePreview2, this.imagePreview3, this.imagePreview4],
       'Quantity': form.value.quantitytext,
       'Price': form.value.productpricetext,
-      'TAG': form.value.tagtext,
+      'TAG': this.SepratedTag,
 
 
     }).subscribe(data => {

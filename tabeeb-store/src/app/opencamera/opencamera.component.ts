@@ -13,24 +13,24 @@ export class OpencameraComponent {
 
   constructor(private imageservice: SharingImageService, private router: Router) {}
 
-  public seconds:number ;
+  // public seconds:number ;
    private trigger: Subject<void> = new Subject<void>();
 
   // latest snapshot
   public webcamImage: WebcamImage = null;
 
   public triggerSnapshot(): void {
-    this.seconds = 3;
-    setTimeout(()=>{
-      this.seconds = 2;
-     setTimeout(()=>{
-       this.seconds = 1
-       setTimeout(()=>{
+    // this.seconds = 3;
+    // setTimeout(()=>{
+    //   this.seconds = 2;
+    //  setTimeout(()=>{
+    //    this.seconds = 1
+    //    setTimeout(()=>{
          this.trigger.next(); 
-         this.seconds = null;
-       },2000)
-     },2000) 
-    },2000)
+    //      this.seconds = null;
+    //    },2000)
+    //  },2000) 
+    // },2000)
        
   }
 
@@ -40,7 +40,6 @@ export class OpencameraComponent {
     this.imageservice.setImage(this.webcamImage);
     // console.log(this.webcamImage);
     if(this.webcamImage){
-      // console.log(this.webcamImage, 'yahi ha  khtoi ka bacha');
       this.router.navigate(['/MeasurePD']);
     }
     else{

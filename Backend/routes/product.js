@@ -14,5 +14,7 @@ router.post('/get_category_products', ProductController.product_get_category_pro
 
 router.post('/viewdetails', ProductController.product_details);
 
+router.post('/deleteproduct', ProductController.product_delete);
+
 
 module.exports = router;

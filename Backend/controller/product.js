@@ -110,3 +110,11 @@ exports.product_details = (req, res, next) => {
             console.log(e);
         })
 };
+
+exports.product_delete = (req, res, next) => {
+    Product.find({'ProductName':req.body.ProductName}).remove().then((doc) => {
+        res.send({status: 'ok'});
+    }, (err) => {
+        res.status(400).send(err);
+    })
+};

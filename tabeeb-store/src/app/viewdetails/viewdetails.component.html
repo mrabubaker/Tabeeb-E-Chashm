@@ -34,7 +34,7 @@
     {{product.ProductName}}</h1>
   <nav class="navbar navbar-light">
     <form class="form-inline">
-      <button class="btn btn-outline-primary" type="button">TRY ON</button>
+      <button class="btn btn-outline-primary" type="button" routerLink="../../opencamera">TRY ON</button>
       <h6 data-toggle="modal" data-target="#exampleModal" style="border-bottom: dashed 1px black; margin-left: 20px;">
         Instructions</h6>
     </form>
@@ -89,7 +89,7 @@
         <!-- <div class="row">
           <h6 class="text-muted" style="padding-top: 20px;">Size: Large</h6>
         </div> -->
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-4 input-group" style="padding-top: 10px; padding-left: 0px; margin:0;">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Quantity</span>
@@ -97,7 +97,7 @@
             <input type="number" min="1" value="1" name="qty" max={{product.Quantity}} ngModel class="form-control"
               aria-describedby="basic-addon1">
           </div>
-        </div>
+        </div> -->
         <div class="row" style="border-bottom: 1px solid black; padding-right: 20px;">
           <h4 style="padding-top: 20px; padding-bottom: 5px;">Rs. {{product.Price}}</h4>
           <span class="refleakt-tips"></span>

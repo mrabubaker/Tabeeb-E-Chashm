@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { forEach } from '@angular/router/src/utils/collection';
+import { TryonImageService } from '../tryon-image.service';
+
 
 @Component({
   selector: 'app-viewdetails',
@@ -11,10 +13,11 @@ import { forEach } from '@angular/router/src/utils/collection';
 })
 export class ViewdetailsComponent implements OnInit {
 
-  constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) { }
+  constructor(private TryonImage: TryonImageService, public route: ActivatedRoute, private http: HttpClient, public router: Router) { }
   cartarray = []
   wishlistarray = []
   product;
+
 
 
   ngOnInit() {
@@ -59,6 +62,7 @@ export class ViewdetailsComponent implements OnInit {
       this.http.post('http://localhost:3000/products/viewdetails', { 'productid': params.id }).subscribe((data) => {
 
         this.product = data;
+        this.TryonImage.setImage(this.product.ProductPhoto);
         // console.log(this.product, "product data");
         // console.log(this.answers);
 

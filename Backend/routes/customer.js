@@ -35,4 +35,6 @@ router.post('/check_address_and_specs', CustomerController.customer_check_addres
 
 router.post('/empty_cart', CustomerController.customer_empty_cart);
 
+
+
 module.exports = router;
