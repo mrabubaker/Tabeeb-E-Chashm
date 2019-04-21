@@ -12,4 +12,10 @@ router.post('/get_name_products',ProductController.product_get_name_products);
 
 router.post('/get_category_products',ProductController.product_get_category_products);
 
+router.post('/armodel',ProductController.product_get_armodel);
+
+router.post('/viewdetails', ProductController.product_details);
+
+router.post('/deleteproduct', ProductController.product_delete);
+
 module.exports = router;

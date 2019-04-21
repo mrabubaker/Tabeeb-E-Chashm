@@ -20,6 +20,7 @@ var ProductSchema = new Schema({
 		Category: [{type: String, required: true}],
 		Shape: { type: String, required: true},
 		Style: { type: String, required: true},
+		Size: {type: String, required: true},
 		Rim: { type: String, required: true},
 		Gender: [{ type: String, required: true}],
 		Material: { type: String, required: true},
@@ -29,6 +30,7 @@ var ProductSchema = new Schema({
 		Color: [{ type: String, required: true}]
 	},
 	ProductPhoto: { type: String, required: true},
+	ARModel: {type:String},
 	AllPhotos: [{type: String, required: true}],
 	Quantity: { type: Number, required: true},
 	Price: { type: Number, required: true },
