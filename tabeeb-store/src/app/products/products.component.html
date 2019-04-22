@@ -9,7 +9,7 @@
             <p class="card-title">{{p.Description}}</p>
             <h6 class="card-title">Rs. {{p.price}}</h6>
         
-            <a routerLink="viewdetails/{{p._id}}"><button type="button" class="btn btn-primary">View Details </button></a>
+            <a routerLink="viewdetails/{{p._id}}"><button type="button" class="btn btn-primary">VIEW DETAILs </button></a>
           </div>
       </div>
     </div>
@@ -32,9 +32,9 @@
 </head>
 
 
-<div class="container" *ngIf="param1 === 'all'">
+<div class="container" *ngIf="param1 === 'all'" style="font-family: monsterra; font-size: 15px;">
 
-  <h1 align="center" style="padding-top: 50px">Top Picks</h1>
+  <h1 align="center" style="padding-top: 50px">TOP PICKS</h1>
   <div style="text-align: center">
     <ul style="list-style-type: none; padding: 0;">
       <li>
@@ -44,7 +44,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-3" *ngFor="let p of ProductsTop">
+    <div class="col-md-3" *ngFor="let p of test2()">
       <div class="card" style="margin: 10px;">
         <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
         <h5>{{p.ProductName}}</h5>
@@ -53,7 +53,7 @@
         <p>
           <!-- <a routerLink="viewdetails" [queryParams]="{ id: p._id}"> -->
           <a [routerLink]="['/viewdetails', p._id]">
-            <button>View Detail</button>
+            <button>VIEW DETAIL</button>
           </a>
         </p>
       </div>
@@ -66,7 +66,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-         <a routerLink="viewdetails"> <button>View Detail</button></a>
+         <a routerLink="viewdetails"> <button>VIEW DETAIL</button></a>
         </p>
       </div>
     </div>
@@ -78,7 +78,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAIL</button></a>
         </p>
       </div>
     </div>
@@ -90,7 +90,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAIL</button></a>
         </p>
       </div>
     </div>
@@ -102,19 +102,19 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAIL</button></a>
         </p>
       </div>
     </div> -->
 
     <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-lg justify-content-center"
-        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
-        More Collection</button>
+      <button type="submit" class="btn btn-outline-dark btn-lg  justify-content-center"
+        style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+        MORE COLLECTION</button>
     </div>
   </div>
 
-  <h1 align="center" style="padding-top: 20px">Deals Of The Day</h1>
+  <h1 align="center" style="padding-top: 20px">DEALS OF THE DAY</h1>
   <div style="text-align: center">
     <ul style="list-style-type: none; padding: 0;">
       <li>
@@ -125,7 +125,7 @@
 
 
   <div class="row">
-    <div class="col-md-3" *ngFor="let p of Productsdeal">
+    <div class="col-md-3" *ngFor="let p of test3()">
       <div class="card" style="margin: 10px;">
         <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
         <h5>{{p.ProductName}}</h5>
@@ -133,16 +133,16 @@
         <p>{{p.ProductSpecifications.Shape}}</p>
         <p>
           <a [routerLink]="['/viewdetails', p._id]">
-            <button>View Detail</button>
+            <button>VIEW DETAIL</button>
           </a>
         </p>
       </div>
     </div>
 
     <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-lg justify-content-center"
-        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
-        More Collection</button>
+      <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+        style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+        MORE COLLECTION</button>
     </div>
   </div>
   <!-- <div class="row">
@@ -153,7 +153,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAIL</button></a>
         </p>
       </div>
     </div>
@@ -165,7 +165,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAIL</button></a>
         </p>
       </div>
     </div>
@@ -177,7 +177,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAIL</button></a>
         </p>
       </div>
     </div>
@@ -189,17 +189,17 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAIL</button></a>
         </p>
       </div>
     </div>
 
     <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-lg justify-content-center" style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore More Collection</button>
+      <button type="submit" class="btn btn-lg justify-content-center" style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE MORE COLLECTION</button>
     </div>
   </div> -->
 
-  <h1 align="center" style="padding-top: 20px">Trending Products</h1>
+  <h1 align="center" style="padding-top: 20px">TRENDING PRODUCTS</h1>
   <div style="text-align: center">
     <ul style="list-style-type: none; padding: 0;">
       <li>
@@ -210,7 +210,7 @@
 
 
   <div class="row">
-    <div class="col-md-3" *ngFor="let p of ProductsTrending">
+    <div class="col-md-3" *ngFor="let p of test()">
       <div class="card" style="margin: 10px;">
         <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
         <h5>{{p.ProductName}}</h5>
@@ -218,16 +218,16 @@
         <p>{{p.ProductSpecifications.Shape}}</p>
         <p>
           <a [routerLink]="['/viewdetails', p._id]">
-            <button>View Detail</button>
+            <button>VIEW DETAIL</button>
           </a>
         </p>
       </div>
     </div>
 
     <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-lg justify-content-center"
-        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
-        More Collection</button>
+      <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+        style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+        MORE COLLECTION</button>
     </div>
   </div>
   <!-- <div class="row">
@@ -238,7 +238,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAILSSS</button></a>
         </p>
       </div>
     </div>
@@ -250,7 +250,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAILSSS</button></a>
         </p>
       </div>
     </div>
@@ -262,7 +262,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAILSSS</button></a>
         </p>
       </div>
     </div>
@@ -274,7 +274,7 @@
         <p class="price">$ 0.00</p>
         <p>Some text about the jeans..</p>
         <p>
-          <a routerLink="viewdetails"> <button>View Detail</button></a>
+          <a routerLink="viewdetails"> <button>VIEW DETAILSSS</button></a>
         </p>
       </div>
     </div>
@@ -289,7 +289,7 @@
 </div>
 <div class="container" *ngIf="param1 === 'men'">
 
-  <h1 align="center" style="padding-top: 20px">Men's Eyeglasses</h1>
+  <h1 align="center" style="padding-top: 20px">MEN'S EYEGLASSES</h1>
   <div style="text-align: center">
     <ul style="list-style-type: none; padding: 0;">
       <li>
@@ -308,23 +308,23 @@
         <p>{{p.ProductSpecifications.Shape}}</p>
         <p>
           <a [routerLink]="['/viewdetails', p._id]">
-            <button>View Detail</button>
+            <button>VIEW DETAILSSS</button>
           </a>
         </p>
       </div>
     </div>
 
-    <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-lg justify-content-center"
-        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
-        More Collection</button>
-    </div>
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+        style=" padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+        MORE COLLECTION</button>
+    </div> -->
   </div>
 </div>
 
 
 <div class="container" *ngIf="param1 === 'women'">
-  <h1 align="center" style="padding-top: 20px">Women's Eyeglasses</h1>
+  <h1 align="center" style="padding-top: 20px">WOMEN'S EYEGLASSES</h1>
   <div style="text-align: center">
     <ul style="list-style-type: none; padding: 0;">
       <li>
@@ -342,23 +342,23 @@
         <p>{{p.ProductSpecifications.Shape}}</p>
         <p>
           <a [routerLink]="['/viewdetails', p._id]">
-            <button>View Detail</button>
+            <button>VIEW DETAILSSS</button>
           </a>
         </p>
       </div>
     </div>
 
-    <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-lg justify-content-center"
-        style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
-        More Collection</button>
-    </div>
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+      <button type="submit" class="btn btn-outline-dark justify-content-center"
+        style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+        MORE COLLECTION</button>
+    </div> -->
   </div>
 </div>
 
 <div class="container" *ngIf="param1 === 'menS'">
 
-    <h1 align="center" style="padding-top: 20px">Men's Sunglasses</h1>
+    <h1 align="center" style="padding-top: 20px">MEN'S SUNGLASSES</h1>
     <div style="text-align: center">
       <ul style="list-style-type: none; padding: 0;">
         <li>
@@ -377,23 +377,23 @@
           <p>{{p.ProductSpecifications.Shape}}</p>
           <p>
             <a [routerLink]="['/viewdetails', p._id]">
-              <button>View Detail</button>
+              <button>VIEW DETAILSSS</button>
             </a>
           </p>
         </div>
       </div>
   
-      <div style="display: flex; justify-content: center; width: 100%">
-        <button type="submit" class="btn btn-lg justify-content-center"
-          style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
-          More Collection</button>
-      </div>
+      <!-- <div style="display: flex; justify-content: center; width: 100%">
+        <button type="submit" class="btn btn-outline-dark  justify-content-center"
+          style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+          MORE COLLECTION</button>
+      </div> -->
     </div>
   </div>
 
   <div class="container" *ngIf="param1 === 'womenS'">
 
-      <h1 align="center" style="padding-top: 20px">Women's Sunglasses</h1>
+      <h1 align="center" style="padding-top: 20px">WOMEN'S SUNGLASSES</h1>
       <div style="text-align: center">
         <ul style="list-style-type: none; padding: 0;">
           <li>
@@ -412,16 +412,16 @@
             <p>{{p.ProductSpecifications.Shape}}</p>
             <p>
               <a [routerLink]="['/viewdetails', p._id]">
-                <button>View Detail</button>
+                <button>VIEW DETAIL</button>
               </a>
             </p>
           </div>
         </div>
     
-        <div style="display: flex; justify-content: center; width: 100%">
-          <button type="submit" class="btn btn-lg justify-content-center"
-            style="font-family: century gothic; background: #e26640; padding-left: 40px; padding-right: 40px; margin: 20px;">Explore
-            More Collection</button>
-        </div>
+        <!-- <div style="display: flex; justify-content: center; width: 100%">
+          <button type="submit" class="btn btn-outline-dark  justify-content-center"
+            style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+            MORE COLLECTION</button>
+        </div> -->
       </div>
     </div>

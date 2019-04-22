@@ -16,5 +16,7 @@ router.post('/viewdetails', ProductController.product_details);
 
 router.post('/deleteproduct', ProductController.product_delete);
 
+router.post('/get_rim_products', ProductController.product_get_rim_products);
+
 
 module.exports = router;

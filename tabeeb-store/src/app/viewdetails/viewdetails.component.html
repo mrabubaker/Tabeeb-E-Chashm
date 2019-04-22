@@ -34,9 +34,9 @@
     {{product.ProductName}}</h1>
   <nav class="navbar navbar-light">
     <form class="form-inline">
-      <button class="btn btn-outline-primary" type="button" routerLink="../../opencamera">TRY ON</button>
+      <button class="btn btn-outline-dark" type="button" routerLink="../../opencamera">TRY ON</button>
       <h6 data-toggle="modal" data-target="#exampleModal" style="border-bottom: dashed 1px black; margin-left: 20px;">
-        Instructions</h6>
+        INSTRUCTIONS</h6>
     </form>
   </nav>
   <!-- 
@@ -105,13 +105,13 @@
         <div class="row" style="padding-top: 20px;">
           <a>
 
-            <div><button type="button" (click)="buynow()" class="btn btn-outline-primary btn-lg"
-                style="margin-bottom: 15px; margin-right: 20px;">Buy Now</button>
-              <button type="button" data-toggle="modal" data-target="#wishlistmodal" class="btn btn-outline-success btn-lg"
-                style="margin-bottom: 15px; margin-right: 20px;">Add to Cart
+            <div><button type="button" (click)="buynow()" class="btn btn-outline-dark"
+                style="margin-bottom: 15px; margin-right: 20px;">BUY NOW</button>
+              <button type="button" data-toggle="modal" data-target="#wishlistmodal" class="btn btn-outline-dark"
+                style="margin-bottom: 15px; margin-right: 20px;">ADD TO CART
               </button>
-              <button type="button" class="btn btn-outline-secondary btn-lg"
-               (click)="wishlistproduct()" style="margin-bottom: 15px; margin-right: 20px;">Add to Wishlist
+              <button type="button" class="btn btn-outline-dark"
+               (click)="wishlistproduct()" style="margin-bottom: 15px; margin-right: 20px;">ADD TO WISLIST
               </button>
             </div>
           </a>
@@ -167,43 +167,43 @@
               <div class="card-body">
                 <table class="table">
                   <tr>
-                    <th>Category</th>
+                    <th>CATEGORY</th>
                     <td>{{product.ProductSpecifications.Category}}</td>
                   </tr>
                   <tr>
-                    <th>Shape</th>
+                    <th>SHAPE</th>
                     <td>{{product.ProductSpecifications.Shape}}</td>
                   </tr>
                   <tr>
-                    <th>Style</th>
+                    <th>STYLE</th>
                     <td>{{product.ProductSpecifications.Style}}</td>
                   </tr>
                   <tr>
-                    <th>Rim</th>
+                    <th>RIM</th>
                     <td>{{product.ProductSpecifications.Rim}}</td>
                   </tr>
                   <tr>
-                    <th>Gender</th>
+                    <th>GENDER</th>
                     <td>{{product.ProductSpecifications.Gender}}</td>
                   </tr>
                   <tr>
-                    <th>Material</th>
+                    <th>MATERIAL</th>
                     <td>{{product.ProductSpecifications.Material}}</td>
                   </tr>
                   <tr>
-                    <th>Temple Size</th>
+                    <th>TEMPLE SIZE</th>
                     <td>{{product.ProductSpecifications.TempleSize}}</td>
                   </tr>
                   <tr>
-                    <th>Bridge Size</th>
+                    <th>BRIDGE SIZE</th>
                     <td>{{product.ProductSpecifications.BridgeSize}}</td>
                   </tr>
                   <tr>
-                    <th>Eye Size</th>
+                    <th>EYE SIZE</th>
                     <td>{{product.ProductSpecifications.EyeSize}}</td>
                   </tr>
                   <tr>
-                    <th>Color</th>
+                    <th>COLOR</th>
                     <td>{{product.ProductSpecifications.Color}}</td>
                   </tr>
                 </table>
@@ -248,7 +248,7 @@
     <div class="modal-dialog " role="document" style="width: 100%;">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel" style="padding: 30px; padding-bottom: 0px;">Wishlist</h5>
+          <h5 class="modal-title" id="exampleModalLabel" style="padding: 30px; padding-bottom: 0px;">WISHLIST</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -256,10 +256,10 @@
         <div class="modal-body" style="padding: 30px;">
           <p>Choose to Proceed</p>
           <div>
-              <button type="submit" (click)="continue()" data-dismiss="modal" class="btn btn-outline-primary btn-lg"
-              style="margin-bottom: 15px; margin-right: 20px;">Continue</button>
-              <button type="submit" (click)="checkout()" data-dismiss="modal" class="btn btn-outline-danger btn-lg"
-                style="margin-bottom: 15px;">Check Out</button>
+              <button type="submit" (click)="continue()" data-dismiss="modal" class="btn btn-outline-dark"
+              style="margin-bottom: 15px; margin-right: 20px;">CONTINUE</button>
+              <button type="submit" (click)="checkout()" data-dismiss="modal" class="btn btn-outline-dark"
+                style="margin-bottom: 15px;">CHECK OUT</button>
           </div>
         </div>
         <!-- <div class="modal-footer">

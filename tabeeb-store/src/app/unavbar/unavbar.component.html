@@ -32,14 +32,15 @@
     crossorigin="anonymous"></script>
 
 </head>
-<div>
-  <h1 align="center"
-    style="font-family: impact; background: #ec874c; padding: 10px; margin: 0px; font-weight: bold;  letter-spacing: 5px;">
-    Tabeeb E Chashm</h1>
+<div style="display: flex; justify-content: center; width: 100%; background: #4D3031;">
+  <!-- <h1 align="center"
+    style="font-family: montserrat; background: #ec874c; padding: 20px; margin: 0px; font-weight: bold; color: white; text-shadow:3px 3px 5px black;">
+    TABEEB E CHASHM</h1> -->
+    <img class="justify-content-center" src="../../assets/logoNew.png" alt="" style="width: 150px; height: 150px; padding: 10px;">
 </div>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg" style="background: #4D3031;  font-family: montserrat; font-size: 20px; letter-spacing: 2px;">
   <!-- <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
        aria-expanded="false" aria-label="Toggle navigation">
@@ -47,9 +48,9 @@
       </button> -->
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto" style="color: white;">
       <li class="nav-item">
-        <a class="nav-link" (click)="home()">HOME</a>
+        <a class="nav-link" (click)="home()" style="color: white;">HOME</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -81,18 +82,18 @@
         <a class="nav-link" (click)="PDclick()">MEASURE PD</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="wishclick()">WISHLIST<span class="badge badge-pill badge-secondary">5</span></a>
+        <a class="nav-link" (click)="wishclick()">WISHLIST<span class="badge badge-pill badge-secondary"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="cartclick()">CART<span class="badge badge-pill badge-secondary">2</span></a>
+        <a class="nav-link" (click)="cartclick()">CART<span class="badge badge-pill badge-secondary"></span></a>
       </li>
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-      <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="searchclick()">Search</button>
-      <button *ngIf="!loggedin" class="btn btn-outline my-2 my-sm-0" (click)="loginclick()"> Login</button>
-      <button *ngIf="loggedin" class="btn btn-outline my-2 my-sm-0" (click)="logout()">Signout</button>
+      <button class="btn btn-outline-light my-2 my-sm-0" type="button" (click)="searchclick()"  style="font-family: montserrat; font-size: 20px; letter-spacing: 2px;">SEARCH</button>
+      <button *ngIf="!loggedin" class="btn btn-outline my-2 my-sm-0" (click)="loginclick()" style="color: white; font-family: montserrat; font-size: 20px; letter-spacing: 2px;"> LOGIN</button>
+      <button *ngIf="loggedin" class="btn btn-outline my-2 my-sm-0" (click)="logout()" style="color: white; font-family: montserrat; font-size: 20px; letter-spacing: 2px;">SIGNOUT</button>
     </form>
 
   </div>

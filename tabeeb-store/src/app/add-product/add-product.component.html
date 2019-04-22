@@ -1,98 +1,103 @@
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
+<form style="padding: 20px;  background:#f8f8f8; color: white; letter-spacing: 2px; font-family: monsterra; font-size: 12px;" #onAddingProductF="ngForm"
+  (submit)="ProdcutAdd(onAddingProductF)">
+  <div class="container"
+    style="padding: 30px; max-width: 500px; width: 100%; margin: 0 auto; position: relative; background: #4D3031; border-radius: 10px;">
 
-<form style="padding: 20px;  background: -webkit-linear-gradient(to right, #e63b07, #f3f3f3d7); background: linear-gradient(to right, #e63b07, #f3f3f3d7);"
-  #onAddingProductF="ngForm" (submit)="ProdcutAdd(onAddingProductF)">
-  <div class="container" style="padding: 30px; max-width: 500px; width: 100%; margin: 0 auto; position: relative; background: white; border-radius: 10px;">
-    <h2 style="padding: 10px,0; text-align: center;">Add Product Details</h2>
+    <!-- <div style="display: flex; justify-content: center; width: 100%; background: #4D3031;">
+      <img class="justfy-content-center" src="../../assets/logoNew.png" alt=""
+        style="width: 150px; height: 150px; padding: 10px;">
+    </div> -->
+
     <div class="form-group">
-      <label for="exampleInput">Product Name</label>
+      <label for="exampleInput">PRODUCT NAME</label>
       <input type="text" autofocus ngModel class="form-control" name="productnametext" placeholder="Product Name">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Description</label>
+      <label for="exampleInputPassword1">DESCRIPTION</label>
       <input type="text" autofocus ngModel class="form-control" name="productdescriptiontext" placeholder="Description">
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail">Category</label>
+      <label for="exampleInputEmail">CATEGORY</label>
       <input type="text" autofocus ngModel class="form-control" name="categorytext" placeholder="Enter Category">
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Shape</label>
+      <label for="exampleInputEmail1">SHAPE</label>
       <input type="text" autofocus ngModel class="form-control" name="shapetext" placeholder="Enter Shape">
 
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Style</label>
+      <label for="exampleInputEmail1">STYLE</label>
       <input type="text" autofocus ngModel class="form-control" name="styletext" placeholder="Enter Style">
 
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Rim</label>
+      <label for="exampleInputEmail1">RIM</label>
       <input type="text" autofocus ngModel class="form-control" name="rimtext" placeholder="Enter Rim">
 
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Gender</label>
+      <label for="exampleInputEmail1">GENDER</label>
       <input type="text" autofocus ngModel class="form-control" name="gendertext" placeholder="Enter Gender">
 
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Material</label>
-      <input type="text" autofocus ngModel class="form-control" name="materialtext" placeholder="Enter Material" >
+      <label for="exampleInputEmail1">MATERIAL</label>
+      <input type="text" autofocus ngModel class="form-control" name="materialtext" placeholder="Enter Material">
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail">Temple Size</label>
+      <label for="exampleInputEmail">TEMPLE SIZE</label>
       <input type="text" autofocus ngModel class="form-control" name="TempleSizetext" placeholder="Temple Size">
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail">Bridge Size</label>
+      <label for="exampleInputEmail">BRIDGE SIZE</label>
       <input type="text" autofocus ngModel class="form-control" name="BridgeSizetext" placeholder="Bridge Size">
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail">Eye Size</label>
+      <label for="exampleInputEmail">EYE SIZE</label>
       <input type="text" autofocus ngModel class="form-control" name="EyeSizetext" placeholder="Eye Size">
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail">Color</label>
+      <label for="exampleInputEmail">COLOR</label>
       <input type="text" autofocus ngModel class="form-control" name="colorText" placeholder="Enter Colors">
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail">Product Photo</label>
-      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,0)" name="ProductPhto" placeholder="Choose Photo"
-        accept="image/*">
+      <label for="exampleInputEmail">PRODUCT PHOTO</label>
+      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,0)" name="ProductPhto"
+        placeholder="Choose Photo" accept="image/*">
     </div>
 
 
     <div class="form-group">
-      <label for="exampleInputEmail1" style="font-weight: bold;">360 Photos</label>
+      <label for="exampleInputEmail1" style="font-weight: bold;">360 PHOTOS</label>
       <br>
-      <label for="">Image One</label>
-      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,1)" name="image1" placeholder="Image One"
-        accept="image/*">
-      <label for="">Image Two</label>
-      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,2)" name="image2" placeholder="Image Two"
-        accept="image/*">
-      <label for="">Image Three</label>
-      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,3)" name="image3" placeholder="Image Three"
-        accept="image/*">
-      <label for="">Image Four</label>
-      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,4)" name="image4" placeholder="Image Four"
-        accept="image/*">
+      <label for="">IMAGE ONE</label>
+      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,1)" name="image1"
+        placeholder="Image One" accept="image/*">
+      <label for="">IMAGE TWO</label>
+      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,2)" name="image2"
+        placeholder="Image Two" accept="image/*">
+      <label for="">IMAGE THREE</label>
+      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,3)" name="image3"
+        placeholder="Image Three" accept="image/*">
+      <label for="">IMAGE FOUR</label>
+      <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,4)" name="image4"
+        placeholder="Image Four" accept="image/*">
       <!-- <div>
         <button type="button" class="btn btn-primary" (click)="filepicker.click()">Add Image</button>
         <input type="file" #filepicker (change)="onImagePicked($event,1)" style="visibility: hidden;" accept="image/*">
@@ -115,22 +120,24 @@
     </form> -->
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Price</label>
+      <label for="exampleInputEmail1">PRICE</label>
       <input type="text" autofocus ngModel class="form-control" name="productpricetext" placeholder="Price">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword">Quantity</label>
+      <label for="exampleInputPassword">QUANTITY</label>
       <input type="text" autofocus ngModel class="form-control" name="quantitytext" placeholder="Number of Itmes">
     </div>
 
 
     <div class="form-group">
       <label for="exampleInputEmail">TAG</label>
-      <input type="text" autofocus ngModel class="form-control" name="tagtext" placeholder="Enter Tags" accept="image/*">
+      <input type="text" autofocus ngModel class="form-control" name="tagtext" placeholder="Enter Tags"
+        accept="image/*">
     </div>
 
     <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-primary btn-lg justify-content-center" style="font-family: century gothic; background: #ca4c25; color: black">Add Product</button>
+      <button type="submit" class="btn btn-outline-light btn-lg justify-content-center" style="margin: 15px;">ADD
+        PRODUCT</button>
     </div>
   </div>
 </form>

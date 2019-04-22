@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
   WomenEG;
   MenSG;
   WomenSG;
+  ipaddress;
 
   ngOnInit() {
     this.route.queryParams
@@ -57,17 +58,18 @@ export class ProductsComponent implements OnInit {
 
   FetchProducts(body, condition) {
     // const body = { TAG: 'Trending'};
-
+    this.ipaddress = localStorage.getItem('ipAddress'),
+    console.log(this.ipaddress);
     this.http.post('http://localhost:3000/products/get_tag_products', body).subscribe((data: any) => {
       //alert(data); 
       // console.log(data);
       if (condition == 'a')
-        this.ProductsTrending = data.products;
+        this.ProductsTrending = data.Array;
       // console.log(this.Products)
       else if (condition == 'b')
-        this.Productsdeal = data.products;
+        this.Productsdeal = data.Array;
       else if (condition == 'c')
-        this.ProductsTop = data.products;
+        this.ProductsTop = data.Array;
       if (data['status'] == 'OK') {
         console.log(status);
         //alert("Login Successful");
@@ -107,6 +109,39 @@ export class ProductsComponent implements OnInit {
       }
     });
 
+  }
+
+  test(){
+    const limitedProducts = [];
+    for (let index = 0; index < this.ProductsTrending.length; index++) {
+      const element = this.ProductsTrending[index];
+      if(index < 4)
+      limitedProducts.push(element);
+    }
+    console.log(limitedProducts)
+    return limitedProducts;
+  }
+
+  test2(){
+    const limitedProducts = [];
+    for (let index = 0; index < this.ProductsTop.length; index++) {
+      const element = this.ProductsTop[index];
+      if(index < 4)
+      limitedProducts.push(element);
+    }
+    console.log(limitedProducts)
+    return limitedProducts;
+  }
+
+  test3(){
+    const limitedProducts = [];
+    for (let index = 0; index < this.Productsdeal.length; index++) {
+      const element = this.Productsdeal[index];
+      if(index < 4)
+      limitedProducts.push(element);
+    }
+    console.log(limitedProducts)
+    return limitedProducts;
   }
 
 

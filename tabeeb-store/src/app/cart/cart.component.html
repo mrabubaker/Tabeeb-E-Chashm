@@ -1,14 +1,14 @@
 <app-unavbar></app-unavbar>
-<button type="button" class="btn btn-primary" (click)="checkdetails()" style="float:right; margin: 20px">Checkout</button>
-<h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Your Cart</h2>
-    <div class="table-responsive" style="padding-left:30px; padding-right:30px">
+<button type="button" class="btn btn-outline-dark" (click)="checkdetails()" style="float:right; margin: 20px">CHECKOUT</button>
+<h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px; letter-spacing: 2px; font-family: monsterra; font-size: 20px;">YOUR CART</h2>
+    <div class="table-responsive" style="padding-left:30px; padding-right:30px; letter-spacing: 2px; font-family: monsterra; font-size: 12px;">
       <table class="table table-sm">
         <thead>
           <tr>
             <th></th>
-            <th>Product Name</th>
+            <th>PRODUCT NAME</th>
             <!-- <th>No. of Items</th> -->
-            <th>Price</th>
+            <th>PRICE</th>
             <!-- <th>Password</th> -->
             <th></th>
           </tr>
@@ -21,7 +21,7 @@
             <td>Rs. {{p.Price}}</td>
             <!-- <td>{{p.noOfItems}}</td> -->
             <!-- <td>{{q.password}}</td> -->
-            <td><button type="button" class="btn btn-primary" (click)="deletecartproduct(p.ProductName)">Remove</button>
+            <td><button type="button" class="btn btn-outline-dark" (click)="deletecartproduct(p.ProductName)">REMOVE</button>
              </td>
           </tr>
          </tbody>

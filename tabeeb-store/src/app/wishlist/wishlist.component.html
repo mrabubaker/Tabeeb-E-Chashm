@@ -6,9 +6,9 @@
     <thead>
       <tr>
         <th></th>
-        <th>Product Name</th>
+        <th>PRODUCT NAME</th>
         <!-- <th>No. of Items</th> -->
-        <th>Unit Price</th>
+        <th>UNIT PRICE</th>
         <!-- <th>Password</th> -->
         <th></th>
       </tr>
@@ -22,9 +22,9 @@
         <!-- <td>{{p.noOfItems}}</td> -->
         <!-- <td>{{q.password}}</td> -->
         <td>
-          <button type="button" class="btn btn-primary" (click)="RemoveWishlistProduct(p.ProductName)"
-            style="margin-right: 20px;">Remove</button>
-          <button type="button" class="btn btn-primary" [routerLink]="['/viewdetails', p._id]">ViewDetails</button>
+          <button type="button" class="btn btn-outline-dark" (click)="RemoveWishlistProduct(p.ProductName)"
+            style="margin-right: 20px;">REMOVE</button>
+          <button type="button" class="btn btn-outline-dark" [routerLink]="['/viewdetails', p._id]">VIEW DETAILS</button>
 
         </td>
       </tr>

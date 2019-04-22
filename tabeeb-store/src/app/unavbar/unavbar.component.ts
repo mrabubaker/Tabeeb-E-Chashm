@@ -16,6 +16,7 @@ export class UnavbarComponent implements OnInit {
 
   ngOnInit() {
     this.getName();
+    console.log("Working on init");
   }
 
   logout() {

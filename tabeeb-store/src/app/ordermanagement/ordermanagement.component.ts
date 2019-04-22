@@ -17,7 +17,7 @@ export class OrdermanagementComponent implements OnInit {
 
 
   Details() {
-    this.http.post('http://localhost:3000/orders/all_order', {
+    this.http.post('http://192.168.43.58:3000/orders/all_order', {
       "CustomerEmail": localStorage.getItem('email'),
 
 

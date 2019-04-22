@@ -3,27 +3,34 @@
     crossorigin="anonymous">
 </head>
 
-<div style="padding: 130px;  background: -webkit-linear-gradient(to right, #e63b07, #f3f3f3d7); background: linear-gradient(to right, #e63b07, #f3f3f3d7);">
+<div style="padding: 65px;  background: #f8f8f8; font-family: monsterra; ">
 
-  <div class="container" style="padding: 30px; max-width: 500px; width: 100%; margin: 0 auto; position: relative; background: white; border-radius: 10px;">
+  <div class="container" style="padding: 30px; max-width: 500px; width: 100%; margin: 0 auto; position: relative; background: white; border-radius: 10px; background: #4D3031; color: white; font-size: 12px; letter-spacing: 2px;">
     <form style="margin:100px,0" #onloginf="ngForm" (submit)="onlogin(onloginf)">
-      <h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">LOG IN</h2>
+      <div style="display: flex; justify-content: center; width: 100%; background: #4D3031;">
+          <img class="justfy-content-center" src="../../assets/logoNew.png" alt="" style="width: 150px; height: 150px; padding: 10px;">
+      </div>
+      
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" autofocus ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+        <label for="exampleInputEmail1">EMAIL ADDRESS</label>
+        <input type="email" autofocus ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email"
           name="emailet">
       </div>
 
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" ngModel required class="form-control" name="passet" id="exampleInputPassword1" placeholder="Password">
+        <label for="exampleInputPassword1">PASSWORD</label>
+        <input type="password" ngModel required class="form-control" name="passet" id="exampleInputPassword1" placeholder="Enter Password">
       </div>
 
 
       <div style="display: flex; justify-content: center; width: 100%">
-        <button type="submit" class="btn btn-primary btn-lg justify-content-center" style="background: #ca4c25; color: black">Log In</button>
-        <a routerLink="../signup" style="margin-left:20px; margin-top: 10px;">Create New Account</a>
+        <button type="submit" class="btn btn-outline-light btn-lg justify-content-center" style="background: #4D3031; color: white; font-size: 20px; margin: 15px;">LOGIN</button>
+        <!-- <a routerLink="/signup" style="margin-left:20px; margin-top: 10px;">CREATE NEW ACCOUNT</a> -->
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%">
+        <!-- <button type="submit" class="btn btn-outline-light btn-lg justify-content-center" style="background: #4D3031; color: white; font-size: 12px;">LOGIN</button> -->
+        <a routerLink="/signup" style="margin-top: 10px; font-size: 15px;">CREATE NEW ACCOUNT</a>
       </div>
     </form>
   </div>

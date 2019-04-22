@@ -3,17 +3,19 @@
     crossorigin="anonymous">
 </head>
 
-<div style="padding: 44.5px;  background: -webkit-linear-gradient(to right, #e63b07, #f3f3f3d7); background: linear-gradient(to right, #e63b07, #f3f3f3d7);">
+<div style="padding: 24px; background: #f8f8f8; font-family: monsterra;">
 
-  <div class="container" style="padding: 30px; max-width: 500px; width: 100%; margin: 0 auto; position: relative; background: white; border-radius: 10px;">
+  <div class="container" style="padding: 30px; max-width: 500px; width: 100%; margin: 0 auto; position: relative; background: #4d3031; border-radius: 10px; font-size: 12px; letter-spacing: 2px;">
 
-    <form style="margin-top:30px" #onSignUpF="ngForm" (submit)="onSignUp(onSignUpF)">
-      <h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px">Register Here</h2>
+    <form style="margin-top:30px" #onSignUpF="ngForm" (submit)="onSignUp(onSignUpF)" style="color: white;">
+      <div style="display: flex; justify-content: center; width: 100%; background: #4D3031;">
+        <img class="justfy-content-center" src="../../assets/logoNew.png" alt="" style="width: 150px; height: 150px; padding: 10px;">
+    </div>
 
       <div class="row">
         <div class="col">
           <div class="form-group">
-            <label for="exampleInputEmail1">First Name</label>
+            <label for="exampleInputEmail1">FIRST NAME</label>
             <input type="email" autofocus ngModel class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter First Name"
               name="firstet">
           </div>
@@ -21,7 +23,7 @@
 
         <div class="col">
           <div class="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
+            <label for="exampleInputEmail1">LAST NAME</label>
             <input type="email" autofocus ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Last Name"
               name="lastet">
           </div>
@@ -30,24 +32,24 @@
 
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
+        <label for="exampleInputEmail1">EMAIL ADDRESS</label>
         <input type="email" autofocus ngModel class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter Email"
           name="emailet">
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Enter Password</label>
+        <label for="exampleInputEmail1">ENTER PASSWORD</label>
         <input type="password" autofocus ngModel class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="Enter Password"
           name="pass1">
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Confirm Password</label>
+        <label for="exampleInputEmail1">CONFIRM PASSWORD</label>
         <input type="password" autofocus ngModel class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp" placeholder="Confirm Password"
           name="pass2">
       </div>
       <div style="display: flex; justify-content: center; width: 100%">
-        <button type="submit" class="btn btn-primary" style="background: #ca4c25; color: black">Done</button>
+        <button type="submit" class="btn btn-outline-light" style="margin-top: 10px; font-size: 15px;">DONE</button>
       </div>
     </form>
   </div>

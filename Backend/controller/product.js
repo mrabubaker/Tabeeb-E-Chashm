@@ -42,7 +42,7 @@ exports.product_get_tag_products = (req, res, next) => {
     Product.find({ TAG: req.body.TAG })
         .then(doc => {
             if (doc) {
-                res.send({ "products": doc });
+                res.send({ "Array": doc });
                 //console.log(doc);
                 //res.end();
             }
@@ -67,7 +67,7 @@ exports.product_get_category_products = (req, res, next) => {
                     });
                 });
                 //console.log(doc);
-                res.send({ "products": products });
+                res.send({ "Array": products });
             }
             else {
                 res.send("No Such Product found!");
@@ -117,4 +117,46 @@ exports.product_delete = (req, res, next) => {
     }, (err) => {
         res.status(400).send(err);
     })
+};
+
+// exports.product_get_rim_products = (req, res, next) => {
+//     console.log('CLIENT REQUEST PRODUCT:  ' ,req.body);
+//     let products = []
+//     Product.find()
+//     .then(doc =>{
+//         if(doc){
+//             //res.send({"Array":doc});
+//             doc.ProductSpecifications.Rim.forEach(element => {
+//                 if (element == req.body.Rim) {
+//                     products.push(doc)
+//                     //products.push(element.ProductSpecifications.Rim)
+//                 }
+                
+//             });
+//             //console.log(doc);
+//             res.send({"Array":products});
+//         }
+//         else{
+//             res.send("No Such Product found!");
+//         }
+//         //res.end();
+//     }).catch(e => {
+//         console.log(e);
+//     }) 
+// };
+
+exports.product_get_rim_products = (req, res, next) => {
+    console.log('CLIENT REQUEST PRODUCT:  ', req.body);
+
+    Product.ProductSpecifications.find({ Rim: req.body.Rim})
+        .then(doc => {
+            if (doc) {
+                res.send({ "Array": doc });
+                //console.log(doc);
+                //res.end();
+            }
+            //res.end();
+        }).catch(e => {
+            console.log(e);
+        })
 };

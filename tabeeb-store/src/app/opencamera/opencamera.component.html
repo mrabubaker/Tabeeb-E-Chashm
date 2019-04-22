@@ -3,7 +3,7 @@
     <!-- <p>{{seconds}}</p> -->
     <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
     <br/>
-    <button id="snapshotBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+    <button class="btn btn-outline-dark" id="snapshotBtn" (click)="triggerSnapshot();">TAKE A SNAPSHOT</button>
   </div>
 </div>
 <!-- <div class="snapshot" *ngIf="webcamImage">
