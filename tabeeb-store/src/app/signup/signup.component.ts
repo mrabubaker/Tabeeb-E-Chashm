@@ -27,13 +27,13 @@ export class SignupComponent implements OnInit {
 
 
 
-    this.http.post('http://localhost:3000/customers/signup', {
+    this.http.post('http://192.168.43.58:3000/customers/signup', {
       'CustomerName': form.value.firstet + " " + form.value.lastet, 
       'Email': form.value.emailet,
       'Password': form.value.pass1
 
     }).subscribe(data => {
-      if (data['status'] == 'OK') {
+      if (data['status'] == 'Sign Up Successful') {
         console.log(status);
         this.route.navigate(['login']);
       }

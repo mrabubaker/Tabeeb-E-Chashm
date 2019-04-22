@@ -21,7 +21,7 @@ export class ProductdetailsComponent implements OnInit {
 
 
   FetchProducts() {
-    this.http.get('http://localhost:3000/products/get_all_products', {
+    this.http.get('http://192.168.43.58:3000/products/get_all_products', {
 
     }).subscribe(data => {
       //alert(data); 

@@ -18,7 +18,7 @@ export class PrescriptionComponent implements OnInit {
 
   addPrrescription(form: NgForm){
     // console.log("chal rha ha");
-    this.http.post('http://localhost:3000/customers/save_opticspecs', {
+    this.http.post('http://192.168.43.58:3000/customers/save_opticspecs', {
 
       "Email": localStorage.getItem('email'),
       "CylindericalLeft": form.value.LCY,

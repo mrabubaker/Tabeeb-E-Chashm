@@ -1,0 +1,88 @@
+<app-unavbar></app-unavbar>
+<div class="container" *ngIf="param1 === 'trending'">
+
+  <h1 align="center" style="padding-top: 20px">TRENDING PRODUCTS</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of ProductsTrending">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILSSS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'deal'">
+
+  <h1 align="center" style="padding-top: 20px">DEAL OF THE DAY</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of Productsdeal">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILSSS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" *ngIf="param1 === 'top'">
+
+  <h1 align="center" style="padding-top: 20px">TOP PRODUCTS</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of ProductsTop">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILSSS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

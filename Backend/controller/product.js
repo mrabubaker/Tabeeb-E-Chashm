@@ -145,15 +145,59 @@ exports.product_delete = (req, res, next) => {
 //     }) 
 // };
 
-exports.product_get_rim_products = (req, res, next) => {
-    console.log('CLIENT REQUEST PRODUCT:  ', req.body);
-
-    Product.ProductSpecifications.find({ Rim: req.body.Rim})
+exports.product_search = (req, res, next) => {
+    console.log('CLIENT SEARCHING PRODUCT:  ', req.body);
+    let products = []
+    Product.find()
         .then(doc => {
             if (doc) {
-                res.send({ "Array": doc });
-                //console.log(doc);
-                //res.end();
+                doc.forEach(element => {
+                    if (req.body.Category == "Gender") {
+                        element.ProductSpecifications.Gender.forEach(cat => {
+                            if (cat == req.body.Keyword) {
+                                products.push(element)
+                            }
+                        });
+                    } else if (req.body.Category == "Color") {
+                        element.ProductSpecifications.Color.forEach(cat => {
+                            if (cat == req.body.Keyword) {
+                                products.push(element)
+                            }
+                        });
+                    } else if (req.body.Category == "Rim") {
+
+                        if (element.ProductSpecifications.Rim == req.body.Keyword) {
+                            products.push(element)
+                        }
+
+                    }
+                    else if (req.body.Category == "Style") {
+
+                        if (element.ProductSpecifications.Style == req.body.Keyword) {
+                            products.push(element)
+                        }
+
+                    }
+                    else if (req.body.Category == "Size") {
+
+                        if (element.ProductSpecifications.Size == req.body.Keyword) {
+                            products.push(element)
+                        }
+
+                    }
+                    else if (req.body.Category == "Material") {
+
+                        if (element.ProductSpecifications.Material == req.body.Keyword) {
+                            products.push(element)
+                        }
+
+                    }
+                });
+                res.send({
+                    "Array": products
+                });
+            } else {
+                res.send("No Such Product found!");
             }
             //res.end();
         }).catch(e => {

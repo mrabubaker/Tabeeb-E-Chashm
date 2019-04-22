@@ -21,7 +21,7 @@ export class UserordersComponent implements OnInit {
   }
 
   Details() {
-    this.http.post('http://localhost:3000/orders/get_order', {
+    this.http.post('http://192.168.43.58:3000/orders/get_order', {
       "CustomerEmail": localStorage.getItem('email'),
 
 

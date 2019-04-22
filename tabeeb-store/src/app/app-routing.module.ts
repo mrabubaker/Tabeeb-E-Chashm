@@ -23,6 +23,7 @@ import {UserordersComponent} from './userorders/userorders.component';
 import {TryonCameraComponent} from './tryon-camera/tryon-camera.component';
 import { TryonComponent} from './tryon/tryon.component';
 import {SearchComponent} from './search/search.component';
+import {MoreproductsComponent} from './moreproducts/moreproducts.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -53,6 +54,7 @@ const routes: Routes = [
     { path: 'opencamera', component: TryonCameraComponent},
     { path: 'tryon', component: TryonComponent},
     { path: 'searchproducts', component: SearchComponent},
+    { path: 'moreprodcuts', component: MoreproductsComponent},
     
     
 ]

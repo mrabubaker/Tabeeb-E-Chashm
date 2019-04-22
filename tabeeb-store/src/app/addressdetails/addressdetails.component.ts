@@ -18,7 +18,7 @@ customerdetail;
   }
 
   AdduserAddress(form: NgForm){
-    this.http.post('http://localhost:3000/customers/save_address', {
+    this.http.post('http://192.168.43.58:3000/customers/save_address', {
       "Email": localStorage.getItem('email'),
       "Building": form.value.buildingtext,
       "Street": form.value.streettext,

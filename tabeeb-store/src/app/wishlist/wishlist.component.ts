@@ -24,7 +24,7 @@ product;
   //   }
 
     Wishlistdetails(){
-      this.http.post('http://localhost:3000/customers/wishlist_products_details', {
+      this.http.post('http://192.168.43.58:3000/customers/wishlist_products_details', {
         "Email": localStorage.getItem('email'),
         
       }).subscribe((data) => {
@@ -36,7 +36,7 @@ product;
 
     RemoveWishlistProduct(name){
       console.log("Wishlist remove working")
-      this.http.post('http://localhost:3000/customers/remove_wishlist', {
+      this.http.post('http://192.168.43.58:3000/customers/remove_wishlist', {
         "Email": localStorage.getItem('email'),
         "ProductName": name,
         

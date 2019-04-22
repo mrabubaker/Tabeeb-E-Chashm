@@ -40,6 +40,12 @@
     </div>
 
     <div class="form-group">
+        <label for="exampleInputEmail1">SIZE</label>
+        <input type="text" autofocus ngModel class="form-control" name="sizetext" placeholder="Enter Style">
+  
+      </div>
+
+    <div class="form-group">
       <label for="exampleInputEmail1">RIM</label>
       <input type="text" autofocus ngModel class="form-control" name="rimtext" placeholder="Enter Rim">
 
@@ -82,6 +88,12 @@
         placeholder="Choose Photo" accept="image/*">
     </div>
 
+    <div class="form-group">
+        <label for="exampleInputEmail">MODEL PICTURE</label>
+        <input type="file" autofocus ngModel class="form-control" (change)="onImagePicked($event,5)" name="ProductPhto"
+          placeholder="Choose Photo" accept="image/*">
+      </div>
+  
 
     <div class="form-group">
       <label for="exampleInputEmail1" style="font-weight: bold;">360 PHOTOS</label>

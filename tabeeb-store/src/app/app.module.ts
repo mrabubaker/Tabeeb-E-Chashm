@@ -42,6 +42,7 @@ import { TryonCameraComponent } from './tryon-camera/tryon-camera.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
 import { SearchproductsComponent } from './searchproducts/searchproducts.component';
+import { MoreproductsComponent } from './moreproducts/moreproducts.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { SearchproductsComponent } from './searchproducts/searchproducts.compone
     TryonCameraComponent,
     SearchComponent,
     SearchproductsComponent,
+    MoreproductsComponent,
   ],
   imports: [
     BrowserModule,

@@ -59,7 +59,7 @@ export class ViewdetailsComponent implements OnInit {
   fetchSelectedProduct() {
     this.route.params.subscribe((params) => {
       // console.log(params.id);
-      this.http.post('http://localhost:3000/products/viewdetails', { 'productid': params.id }).subscribe((data) => {
+      this.http.post('http://192.168.43.58:3000/products/viewdetails', { 'productid': params.id }).subscribe((data) => {
 
         this.product = data;
         this.TryonImage.setImage(this.product.ProductPhoto);
@@ -94,7 +94,7 @@ export class ViewdetailsComponent implements OnInit {
 
 
   continue() {
-    this.http.post('http://localhost:3000/customers/add_cart', {
+    this.http.post('http://192.168.43.58:3000/customers/add_cart', {
       "Email": localStorage.getItem('email'),
       "ProductName": this.product.ProductName,
     }).subscribe((data) => {
@@ -103,7 +103,7 @@ export class ViewdetailsComponent implements OnInit {
   }
 
   checkout() {
-    this.http.post('http://localhost:3000/customers/add_cart', {
+    this.http.post('http://192.168.43.58:3000/customers/add_cart', {
       "Email": localStorage.getItem('email'),
       "ProductName": this.product.ProductName,
     }).subscribe((data) => {
@@ -112,7 +112,7 @@ export class ViewdetailsComponent implements OnInit {
   }
 
   wishlistproduct() {
-    this.http.post('http://localhost:3000/customers/add_wishlist', {
+    this.http.post('http://192.168.43.58:3000/customers/add_wishlist', {
       "Email": localStorage.getItem('email'),
       "ProductName": this.product.ProductName,
     }).subscribe((data) => {
@@ -124,7 +124,7 @@ export class ViewdetailsComponent implements OnInit {
 
   buynow() {
 
-    this.http.post('http://localhost:3000/customers/add_cart', {
+    this.http.post('http://192.168.43.58:3000/customers/add_cart', {
       "Email": localStorage.getItem('email'),
       "ProductName": this.product.ProductName,
     }).subscribe((data) => {

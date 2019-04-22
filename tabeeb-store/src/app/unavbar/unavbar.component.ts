@@ -46,7 +46,7 @@ export class UnavbarComponent implements OnInit {
 
   getName() {
     // console.log('okasd')
-    this.http.post('http://localhost:3000/customers/getname', {
+    this.http.post('http://192.168.43.58:3000/customers/getname', {
       "Email": localStorage.getItem('email'),
     }).subscribe((data) => {
       this.Customer = data;

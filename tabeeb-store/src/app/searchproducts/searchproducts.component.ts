@@ -43,7 +43,7 @@ export class SearchproductsComponent implements OnInit {
   categoryProducts(body, condition) {
     // const body = { TAG: 'Trending'};
 
-    this.http.post('http://localhost:3000/products/get_category_products', {'Category': body}).subscribe((data: any) => {
+    this.http.post('http://192.168.43.58:3000/products/get_category_products', {'Category': body}).subscribe((data: any) => {
       console.log(data, "its working"); 
       // console.log(data);
       if (condition == 'a')

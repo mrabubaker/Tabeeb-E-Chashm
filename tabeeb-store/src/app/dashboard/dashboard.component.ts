@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
 
   deleteuser(id){
     console.log(id);
-    this.http.post('http://localhost:3000/deleteuser', {'id':id}).subscribe((data) => {
+    this.http.post('http://192.168.43.58:3000/deleteuser', {'id':id}).subscribe((data) => {
       this.FetchUser();
 
     });

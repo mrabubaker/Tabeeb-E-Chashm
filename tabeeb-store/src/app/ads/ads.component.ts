@@ -34,7 +34,7 @@ export class AdsComponent implements OnInit {
 
     console.log(form.value);
 
-    this.http.post('http://localhost:3000/main/ad', {
+    this.http.post('http://192.168.43.58:3000/main/ad', {
       'AdTitle': form.value.adtitle,
       'StartTime': form.value.starttiming,
       'EndTime': form.value.endtiming,

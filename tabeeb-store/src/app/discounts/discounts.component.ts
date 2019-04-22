@@ -26,7 +26,7 @@ export class DiscountsComponent implements OnInit {
 
 
 
-    this.http.post('http://localhost:3000/main/discount', {
+    this.http.post('http://192.168.43.58:3000/main/discount', {
       'DiscountTitle': form.value.discouttitle,
       'DiscountPercentage': form.value.discountpercentage,
       'StartTime': form.value.starttime,

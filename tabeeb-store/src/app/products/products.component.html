@@ -108,7 +108,8 @@
     </div> -->
 
     <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-outline-dark btn-lg  justify-content-center"
+      <button type="submit" [routerLink]="['/moreprodcuts']" (click)="productsR()" [queryParams]="{ order: 'top'}"
+        class="btn btn-outline-dark btn-lg  justify-content-center"
         style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
         MORE COLLECTION</button>
     </div>
@@ -140,7 +141,8 @@
     </div>
 
     <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+      <button type="submit" [routerLink]="['/moreprodcuts']" (click)="productsR()" [queryParams]="{ order: 'deal'}"
+        class="btn btn-outline-dark btn-lg justify-content-center"
         style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
         MORE COLLECTION</button>
     </div>
@@ -225,7 +227,8 @@
     </div>
 
     <div style="display: flex; justify-content: center; width: 100%">
-      <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+      <button type="submit" [routerLink]="['/moreprodcuts']" (click)="productsR()" [queryParams]="{ order: 'trending'}"
+        class="btn btn-outline-dark btn-lg justify-content-center"
         style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
         MORE COLLECTION</button>
     </div>
@@ -358,70 +361,70 @@
 
 <div class="container" *ngIf="param1 === 'menS'">
 
-    <h1 align="center" style="padding-top: 20px">MEN'S SUNGLASSES</h1>
-    <div style="text-align: center">
-      <ul style="list-style-type: none; padding: 0;">
-        <li>
-          <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
-        </li>
-      </ul>
-    </div>
-  
-    <div class="row">
-      <div class="col-md-3" *ngFor="let p of MenSG">
-        <!-- <h2>hashsjdakhdsk</h2> -->
-        <div class="card" style="margin: 10px;">
-          <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
-          <h5>{{p.ProductName}}</h5>
-          <p class="price">Rs. {{p.Price}}</p>
-          <p>{{p.ProductSpecifications.Shape}}</p>
-          <p>
-            <a [routerLink]="['/viewdetails', p._id]">
-              <button>VIEW DETAILSSS</button>
-            </a>
-          </p>
-        </div>
+  <h1 align="center" style="padding-top: 20px">MEN'S SUNGLASSES</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of MenSG">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILSSS</button>
+          </a>
+        </p>
       </div>
-  
-      <!-- <div style="display: flex; justify-content: center; width: 100%">
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
         <button type="submit" class="btn btn-outline-dark  justify-content-center"
           style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
           MORE COLLECTION</button>
       </div> -->
-    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'womenS'">
+
+  <h1 align="center" style="padding-top: 20px">WOMEN'S SUNGLASSES</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
   </div>
 
-  <div class="container" *ngIf="param1 === 'womenS'">
-
-      <h1 align="center" style="padding-top: 20px">WOMEN'S SUNGLASSES</h1>
-      <div style="text-align: center">
-        <ul style="list-style-type: none; padding: 0;">
-          <li>
-            <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
-          </li>
-        </ul>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of WomenSG">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAIL</button>
+          </a>
+        </p>
       </div>
-    
-      <div class="row">
-        <div class="col-md-3" *ngFor="let p of WomenSG">
-          <!-- <h2>hashsjdakhdsk</h2> -->
-          <div class="card" style="margin: 10px;">
-            <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
-            <h5>{{p.ProductName}}</h5>
-            <p class="price">Rs. {{p.Price}}</p>
-            <p>{{p.ProductSpecifications.Shape}}</p>
-            <p>
-              <a [routerLink]="['/viewdetails', p._id]">
-                <button>VIEW DETAIL</button>
-              </a>
-            </p>
-          </div>
-        </div>
-    
-        <!-- <div style="display: flex; justify-content: center; width: 100%">
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
           <button type="submit" class="btn btn-outline-dark  justify-content-center"
             style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
             MORE COLLECTION</button>
         </div> -->
-      </div>
-    </div>
+  </div>
+</div>

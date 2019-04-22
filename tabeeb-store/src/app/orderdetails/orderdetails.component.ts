@@ -26,7 +26,7 @@ export class OrderdetailsComponent implements OnInit {
 
   getDetails() {
     // console.log("getdetails is working")
-    this.http.post('http://localhost:3000/customers/get_optical_specs_and_address', {
+    this.http.post('http://192.168.43.58:3000/customers/get_optical_specs_and_address', {
       "Email": localStorage.getItem('email'),
 
     }).subscribe((data) => {
@@ -53,12 +53,12 @@ export class OrderdetailsComponent implements OnInit {
   }
 
   getCart() {
-    this.http.post('http://localhost:3000/customers/cart_products_details', {
+    this.http.post('http://192.168.43.58:3000/customers/cart_products_details', {
       "Email": localStorage.getItem('email'),
 
     }).subscribe((data) => {
       this.product = data;
-      //console.log(this.product);
+      // console.log(this.product);
       this.product.Array.forEach(product => {
         this.sum = this.sum + product.Price;
         this.photos.push(product.ProductName);
@@ -74,7 +74,7 @@ export class OrderdetailsComponent implements OnInit {
 
   placeorder() {
     // alert("working");
-    this.http.post('http://localhost:3000/orders/place_order', {
+    this.http.post('http://192.168.43.58:3000/orders/place_order', {
       "CustomerEmail": localStorage.getItem('email'),
       "Product": this.photos,
       "OpticalSpecifications": this.optics,
@@ -84,7 +84,17 @@ export class OrderdetailsComponent implements OnInit {
 
     }).subscribe((data) => {
       this.route.navigateByUrl('orders');
+      this.emptycart();
     });
 
   }
+
+  emptycart() {
+    this.http.post('http://192.168.43.58:3000/customers/empty_cart', {
+      "Email": localStorage.getItem('email'),
+
+    }).subscribe((data) => {
+    });
+  }
+
 }

@@ -1,7 +1,7 @@
 <form #placeorderF="ngForm" (submit)="PlaceOrder(placeorderF)"
   style="padding-top: 40px; padding-bottom: 40px; padding-left: 20px; padding-right: 20px; background: #f8f8f8; font-family: monsterra; font-size: 20px;">
   <div style="display: flex; justify-content: center; width: 100%">
-    <h4 style="font-family: monsterra; font-size: 30px; color: black">ORDER SUMMARY</h4>
+    <h4 style="font-family: monsterra; font-size: 30px; color: black">ORDERS</h4>
   </div>
   <div>
     <table class="table" style="border: solid black 2px" style="background: white;">
@@ -12,6 +12,7 @@
           <th scope="col">NAME</th>
           <th scope="col">STATUS</th>
           <th scope="col">PRICE</th>
+          <th scope="col">Email</th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +21,7 @@
           <td>{{p.productname}}</td>
           <td>{{p.status}}</td>
           <td>Rs.{{p.productprice}}</td>
+          <td>{{p.customer}}</td>
         </tr>
         <tr>
       </tbody>

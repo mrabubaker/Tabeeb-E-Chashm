@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.http.post('http://localhost:3000/customers/login', {
+    this.http.post('http://192.168.43.58:3000/customers/login', {
       'Email': form.value.emailet,
       'Password': form.value.passet,
       

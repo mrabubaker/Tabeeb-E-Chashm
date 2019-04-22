@@ -25,6 +25,7 @@ export class AddProductComponent implements OnInit {
   imagePreview2;
   imagePreview3;
   imagePreview4;
+  imagePreview5;
   variableclr;
   SeparattedColor;
   variablegender;
@@ -71,7 +72,8 @@ export class AddProductComponent implements OnInit {
     console.log(this.SepratedTag);
 
 
-    this.http.post('http://localhost:3000/products/create_product', {
+
+    this.http.post('http://192.168.43.58:3000/products/create_product', {
       //'product':form.value
       // 'Productid': form.value.productidtext,
       'ProductName': form.value.productnametext,
@@ -80,6 +82,7 @@ export class AddProductComponent implements OnInit {
         'Category': form.value.categorytext,
         'Shape': form.value.shapetext,
         'Style': form.value.styletext,
+        'Size': form.value.sizetext,
         'Rim': form.value.rimtext,
         'Gender': form.value.gendertext,
         'Material': form.value.materialtext,
@@ -90,6 +93,7 @@ export class AddProductComponent implements OnInit {
         
       },
       'ProductPhoto': this.imagePreview,
+      // 'ARModel': this.imagePreview,
       'AllPhotos': [this.imagePreview1, this.imagePreview2, this.imagePreview3, this.imagePreview4],
       'Quantity': form.value.quantitytext,
       'Price': form.value.productpricetext,
@@ -138,6 +142,11 @@ export class AddProductComponent implements OnInit {
       if (n == 4) {
         this.imagePreview4 = reader.result;
         console.log(this.imagePreview4, n)
+      }
+
+      if (n == 5) {
+        this.imagePreview5 = reader.result;
+        console.log(this.imagePreview5, n)
       }
 
       // this.imagePreview = reader.result;

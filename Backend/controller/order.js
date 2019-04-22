@@ -102,6 +102,7 @@ exports.order_get_all_order_details = (req, res, next) => {
                             productname: pr.ProductName,
                             productphoto: pr.ProductPhoto,
                             productprice: pr.Price,
+                            customerEmail: pr.CustomerEmail,
                         }
 
                         resolve(obj)

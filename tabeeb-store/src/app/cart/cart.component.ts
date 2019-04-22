@@ -46,7 +46,7 @@ export class CartComponent implements OnInit {
   }
 
   BuyNow(form: NgForm) {
-    this.http.post('http://localhost:3000/sales', {
+    this.http.post('http://192.168.43.58:3000/sales', {
 
     }).subscribe(data => {
       console.log(data);
@@ -60,7 +60,7 @@ export class CartComponent implements OnInit {
   }
 
   getCart() {
-    this.http.post('http://localhost:3000/customers/cart_products_details', {
+    this.http.post('http://192.168.43.58:3000/customers/cart_products_details', {
       "Email": localStorage.getItem('email'),
 
     }).subscribe((data) => {
@@ -72,7 +72,7 @@ export class CartComponent implements OnInit {
 
   deletecartproduct(name) {
     // console.log('working delete button');
-    this.http.post('http://localhost:3000/customers/remove_cart', {
+    this.http.post('http://192.168.43.58:3000/customers/remove_cart', {
       "Email": localStorage.getItem('email'),
       "ProductName": name,
 
@@ -83,7 +83,7 @@ export class CartComponent implements OnInit {
   }
 
   checkdetails(){
-    this.http.post('http://localhost:3000/customers/check_address_and_specs', {
+    this.http.post('http://192.168.43.58:3000/customers/check_address_and_specs', {
       "Email": localStorage.getItem('email'),
     }).subscribe((data) => {
 

@@ -48,8 +48,8 @@ export class ProductsComponent implements OnInit {
     else {
       this.param1 = 'all';
       this.FetchProducts({ TAG: 'Trending' }, 'a');
-      this.FetchProducts({ TAG: 'DealOfTheDay' }, 'b');
-      this.FetchProducts({ TAG: 'TopPicks' }, 'c');
+      this.FetchProducts({ TAG: 'Deal Of The Day' }, 'b');
+      this.FetchProducts({ TAG: 'Top Picks' }, 'c');
 
     }
 
@@ -60,7 +60,7 @@ export class ProductsComponent implements OnInit {
     // const body = { TAG: 'Trending'};
     this.ipaddress = localStorage.getItem('ipAddress'),
     console.log(this.ipaddress);
-    this.http.post('http://localhost:3000/products/get_tag_products', body).subscribe((data: any) => {
+    this.http.post('http://192.168.43.58:3000/products/get_tag_products', body).subscribe((data: any) => {
       //alert(data); 
       // console.log(data);
       if (condition == 'a')
