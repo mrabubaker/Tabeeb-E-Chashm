@@ -18,4 +18,6 @@ router.post('/viewdetails', ProductController.product_details);
 
 router.post('/deleteproduct', ProductController.product_delete);
 
+router.post('/search', ProductController.product_search)
+
 module.exports = router;
