@@ -1,20 +1,18 @@
 Order = require('../models/order');
+Product = require('../models/product')
 
-exports.order_place_order = (req,res, next) => {
-    
+exports.order_place_order = (req, res, next) => {
+
     console.log("PLACING ORDER");
-    // res.send({message : 'Done'})
 
-    console.log(req.body,'');
-    var order = new Order(req.body);
-    order.save();
-   // Order.create(req.body);
-    res.send({status: 'ok'})
+    Order.create(req.body);
+    res.send({
+        status: 'ok'
+    })
 
 };
 
 exports.order_get_order_details = (req, res, next) => {
-    console.log("WOrking get order details")
     let result = []
     Order.find({
         CustomerEmail: req.body.CustomerEmail
@@ -43,11 +41,11 @@ exports.order_get_order_details = (req, res, next) => {
                         }
                         var obj = {
                             status: order.OrderStatus,
-                            date: date,
                             price: order.OrderTotalPrice,
+                            date: date,
                             productname: pr.ProductName,
                             productphoto: pr.ProductPhoto,
-                            productprice: pr.Price,
+                            productprice: pr.Price
                         }
 
                         resolve(obj)
@@ -66,6 +64,13 @@ exports.order_get_order_details = (req, res, next) => {
         })
     });
 
+};
+
+exports.order_get_shipping_address_product_price = (req,res,next) =>{
+
+    Order.find({_id: req.body._id}).then(order => {
+        res.send(order);
+    })
 };
 
 exports.order_get_all_order_details = (req, res, next) => {
@@ -102,7 +107,6 @@ exports.order_get_all_order_details = (req, res, next) => {
                             productname: pr.ProductName,
                             productphoto: pr.ProductPhoto,
                             productprice: pr.Price,
-                            customerEmail: pr.CustomerEmail,
                         }
 
                         resolve(obj)
