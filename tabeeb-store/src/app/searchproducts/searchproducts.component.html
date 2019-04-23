@@ -1,6 +1,1025 @@
 <div class="container" *ngIf="param1 === 'meneyeglasses'">
 
-    <h1 align="center" style="padding-top: 20px">MENS'S EYEGLASSES</h1>
+  <h1 align="center" style="padding-top: 20px">MENS'S EYEGLASSES</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of meneyeglass">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+        <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+          style=" padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+          MORE COLLECTION</button>
+      </div> -->
+  </div>
+</div>
+
+
+<div class="container" *ngIf="param1 === 'womeneyeglasses'">
+  <h1 align="center" style="padding-top: 20px">WOMEN'S EYEGLASSES</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of womeneyeglass">
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+        <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+          style=" padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+          MORE COLLECTION</button>
+      </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'mensungalsses'">
+
+  <h1 align="center" style="padding-top: 20px">MEN'S SUNGLASSES</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of mensunglass">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+          <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+            style=" padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+            MORE COLLECTION</button>
+        </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'womensungalsses'">
+
+  <h1 align="center" style="padding-top: 20px">WOMEN'S SUNGLASSES</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of womensunglass">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+            <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+              style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+              MORE COLLECTION</button>
+          </div> -->
+  </div>
+</div>
+
+
+<div class="container" *ngIf="param1 === 'Hexagonal'">
+
+  <h1 align="center" style="padding-top: 20px">HEXAGONAL</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of HexagonalProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+              <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                MORE COLLECTION</button>
+            </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Octagonal'">
+
+  <h1 align="center" style="padding-top: 20px">OCTAGONAL</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of OctagonalProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                  style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                  MORE COLLECTION</button>
+              </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Round'">
+
+  <h1 align="center" style="padding-top: 20px">ROUND</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of RoundProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                  <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                    style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                    MORE COLLECTION</button>
+                </div> -->
+  </div>
+</div>
+
+
+<div class="container" *ngIf="param1 === 'Wayfarer'">
+
+  <h1 align="center" style="padding-top: 20px">WAYFARER</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of WayfarerProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                    <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                      style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                      MORE COLLECTION</button>
+                  </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Rectangle'">
+
+  <h1 align="center" style="padding-top: 20px">RECTANGLE</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of RectangleProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                      <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                        style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                        MORE COLLECTION</button>
+                    </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Square'">
+
+  <h1 align="center" style="padding-top: 20px">SQUARE</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of SquareProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                        <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                          style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                          MORE COLLECTION</button>
+                      </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Oval'">
+
+  <h1 align="center" style="padding-top: 20px">OVAL SUNGLASSES</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of OvalProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                          <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                            style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                            MORE COLLECTION</button>
+                        </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Oval'">
+
+  <h1 align="center" style="padding-top: 20px">OVAL</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of OvalProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                            <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                              style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                              MORE COLLECTION</button>
+                          </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'CatEye'">
+
+  <h1 align="center" style="padding-top: 20px">CAT EYE</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of CatEyeProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                              <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                MORE COLLECTION</button>
+                            </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Aviator'">
+
+  <h1 align="center" style="padding-top: 20px">AVIATOR</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of AviatorProduct">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                  style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                  MORE COLLECTION</button>
+                              </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Small'">
+
+  <h1 align="center" style="padding-top: 20px">SMALL</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of smallproducts">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                  <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                    style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                    MORE COLLECTION</button>
+                                </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Medium'">
+
+  <h1 align="center" style="padding-top: 20px">MEDIUM</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of mediumproducts">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                    <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                      style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                      MORE COLLECTION</button>
+                                  </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'Large'">
+
+  <h1 align="center" style="padding-top: 20px">LARGE</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of largeproducts">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                      <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                        style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                        MORE COLLECTION</button>
+                                    </div> -->
+  </div>
+</div>
+
+
+<div class="container" *ngIf="param1 === 'FullRim'">
+
+  <h1 align="center" style="padding-top: 20px">FULL RIM</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of fullrim">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                        <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                          style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                          MORE COLLECTION</button>
+                                      </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'HalfRim'">
+
+  <h1 align="center" style="padding-top: 20px">HALF RIM</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of halfrim">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                          <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                            style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                            MORE COLLECTION</button>
+                                        </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'menglasses'">
+
+  <h1 align="center" style="padding-top: 20px">MEN</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of menswear">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                            <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                              style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                              MORE COLLECTION</button>
+                                          </div> -->
+  </div>
+</div>
+
+
+<div class="container" *ngIf="param1 === 'womenglasses'">
+
+  <h1 align="center" style="padding-top: 20px">WOMEN</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of womenswear">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                              <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                MORE COLLECTION</button>
+                                            </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'metal'">
+
+  <h1 align="center" style="padding-top: 20px">METAL</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of metalglasses">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                  style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                  MORE COLLECTION</button>
+                                              </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'plastic'">
+
+  <h1 align="center" style="padding-top: 20px">PLASTIC</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of plasticglasses">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                  <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                    style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                    MORE COLLECTION</button>
+                                                </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'acetate'">
+
+  <h1 align="center" style="padding-top: 20px">ACETATE</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of acetateglasses">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                    <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                      style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                      MORE COLLECTION</button>
+                                                  </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'mixmaterial'">
+
+  <h1 align="center" style="padding-top: 20px">MIX-MATERIAL</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of mixmaterialglasses">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                      <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                        style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                        MORE COLLECTION</button>
+                                                    </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'black'">
+
+  <h1 align="center" style="padding-top: 20px">BLACK</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of blackclr">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                        <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                          style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                          MORE COLLECTION</button>
+                                                      </div> -->
+  </div>
+</div>
+
+
+<div class="container" *ngIf="param1 === 'grey'">
+
+  <h1 align="center" style="padding-top: 20px">GREY</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of greyclr">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                          <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                            style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                            MORE COLLECTION</button>
+                                                        </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'gold'">
+
+  <h1 align="center" style="padding-top: 20px">GOLD</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of goldclr">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                            <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                              style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                              MORE COLLECTION</button>
+                                                          </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'red'">
+
+  <h1 align="center" style="padding-top: 20px">RED</h1>
+  <div style="text-align: center">
+    <ul style="list-style-type: none; padding: 0;">
+      <li>
+        <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of redclr">
+      <!-- <h2>hashsjdakhdsk</h2> -->
+      <div class="card" style="margin: 10px;">
+        <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
+        <h5>{{p.ProductName}}</h5>
+        <p class="price">Rs. {{p.Price}}</p>
+        <p>{{p.ProductSpecifications.Shape}}</p>
+        <p>
+          <a [routerLink]="['/viewdetails', p._id]">
+            <button>VIEW DETAILS</button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                              <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                                style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                                MORE COLLECTION</button>
+                                                            </div> -->
+  </div>
+</div>
+
+<div class="container" *ngIf="param1 === 'brown'">
+
+    <h1 align="center" style="padding-top: 20px">BROWN</h1>
     <div style="text-align: center">
       <ul style="list-style-type: none; padding: 0;">
         <li>
@@ -10,7 +1029,7 @@
     </div>
   
     <div class="row">
-      <div class="col-md-3" *ngFor="let p of meneyeglass">
+      <div class="col-md-3" *ngFor="let p of brownclr">
         <!-- <h2>hashsjdakhdsk</h2> -->
         <div class="card" style="margin: 10px;">
           <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
@@ -25,114 +1044,10 @@
         </div>
       </div>
   
-      <div style="display: flex; justify-content: center; width: 100%">
-        <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
-          style=" padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
-          MORE COLLECTION</button>
-      </div>
+      <!-- <div style="display: flex; justify-content: center; width: 100%">
+                                                                <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
+                                                                  style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
+                                                                  MORE COLLECTION</button>
+                                                              </div> -->
     </div>
   </div>
-  
-  
-  <div class="container" *ngIf="param1 === 'womeneyeglasses'">
-    <h1 align="center" style="padding-top: 20px">WOMEN'S EYEGLASSES</h1>
-    <div style="text-align: center">
-      <ul style="list-style-type: none; padding: 0;">
-        <li>
-          <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
-        </li>
-      </ul>
-    </div>
-  
-    <div class="row">
-      <div class="col-md-3" *ngFor="let p of womeneyeglass">
-        <div class="card" style="margin: 10px;">
-          <img src="{{p.ProductPhoto}}" alt="Denim Jeans" style="width:100%; padding: 5px;">
-          <h5>{{p.ProductName}}</h5>
-          <p class="price">Rs. {{p.Price}}</p>
-          <p>{{p.ProductSpecifications.Shape}}</p>
-          <p>
-            <a [routerLink]="['/viewdetails', p._id]">
-              <button>VIEW DETAILS</button>
-            </a>
-          </p>
-        </div>
-      </div>
-  
-      <div style="display: flex; justify-content: center; width: 100%">
-        <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
-          style=" padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
-          MORE COLLECTION</button>
-      </div>
-    </div>
-  </div>
-  
-  <div class="container" *ngIf="param1 === 'mensungalsses'">
-  
-      <h1 align="center" style="padding-top: 20px">MEN'S SUNGLASSES</h1>
-      <div style="text-align: center">
-        <ul style="list-style-type: none; padding: 0;">
-          <li>
-            <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
-          </li>
-        </ul>
-      </div>
-    
-      <div class="row">
-        <div class="col-md-3" *ngFor="let p of mensunglass">
-          <!-- <h2>hashsjdakhdsk</h2> -->
-          <div class="card" style="margin: 10px;">
-            <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
-            <h5>{{p.ProductName}}</h5>
-            <p class="price">Rs. {{p.Price}}</p>
-            <p>{{p.ProductSpecifications.Shape}}</p>
-            <p>
-              <a [routerLink]="['/viewdetails', p._id]">
-                <button>VIEW DETAILS</button>
-              </a>
-            </p>
-          </div>
-        </div>
-    
-        <div style="display: flex; justify-content: center; width: 100%">
-          <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
-            style=" padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
-            MORE COLLECTION</button>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container" *ngIf="param1 === 'womensungalsses'">
-  
-        <h1 align="center" style="padding-top: 20px">WOMEN'S SUNGLASSES</h1>
-        <div style="text-align: center">
-          <ul style="list-style-type: none; padding: 0;">
-            <li>
-              <ul style="padding: 0;">Stylish Collection | Mirrored Designs | UV Protection</ul>
-            </li>
-          </ul>
-        </div>
-      
-        <div class="row">
-          <div class="col-md-3" *ngFor="let p of womensunglass">
-            <!-- <h2>hashsjdakhdsk</h2> -->
-            <div class="card" style="margin: 10px;">
-              <img src="{{p.ProductPhoto}}" style="width:100%; padding: 5px;">
-              <h5>{{p.ProductName}}</h5>
-              <p class="price">Rs. {{p.Price}}</p>
-              <p>{{p.ProductSpecifications.Shape}}</p>
-              <p>
-                <a [routerLink]="['/viewdetails', p._id]">
-                  <button>VIEW DETAILS</button>
-                </a>
-              </p>
-            </div>
-          </div>
-      
-          <div style="display: flex; justify-content: center; width: 100%">
-            <button type="submit" class="btn btn-outline-dark btn-lg justify-content-center"
-              style="padding-left: 40px; padding-right: 40px; margin: 20px;">EXPLORE
-              MORE COLLECTION</button>
-          </div>
-        </div>
-      </div>

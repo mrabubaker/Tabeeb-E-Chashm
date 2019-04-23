@@ -37,7 +37,7 @@ export class MeasurePDComponent implements OnInit {
       var difference = 0;
       var value = 0;
       var PD = 0;
-
+      // var pointNum = parseFloat(this.PD);
 
       $('.draggableleft').draggable(
         {

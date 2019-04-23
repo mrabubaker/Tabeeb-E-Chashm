@@ -31,18 +31,18 @@ export class ProductsComponent implements OnInit {
       });
 
     if (this.param1 === 'men') {
-      this.categoryProducts('Men Sunglasses', 'a');
+      this.categoryProducts('Men Eyeglasses', 'a');
     }
     else if (this.param1 === 'women') {
-      this.categoryProducts('Women Sunglasses', 'b');
+      this.categoryProducts('Women Eyeglasses', 'b');
     }
 
     else if (this.param1 === 'menS') {
-      this.categoryProducts('Men Eyeglasses', 'c');
+      this.categoryProducts('Men Sunglasses', 'c');
     }
 
     else if (this.param1 === 'womenS') {
-      this.categoryProducts('Women Eyeglasses', 'd');
+      this.categoryProducts('Women Sunglasses', 'd');
     }
     
     else {
@@ -58,7 +58,7 @@ export class ProductsComponent implements OnInit {
 
   FetchProducts(body, condition) {
     // const body = { TAG: 'Trending'};
-    this.ipaddress = localStorage.getItem('ipAddress'),
+    // this.ipaddress = localStorage.getItem('ipAddress'),
     console.log(this.ipaddress);
     this.http.post('http://192.168.43.58:3000/products/get_tag_products', body).subscribe((data: any) => {
       //alert(data); 
@@ -84,22 +84,22 @@ export class ProductsComponent implements OnInit {
   categoryProducts(body, condition) {
     // const body = { TAG: 'Trending'};
 
-    this.http.post('http://localhost:3000/products/get_category_products', {'Category': body}).subscribe((data: any) => {
-      console.log(data); 
-      // console.log(data);
+    this.http.post('http://192.168.43.58:3000/products/get_category_products', {'Category': body}).subscribe((data: any) => {
+     
+    // console.log(data);
       if (condition == 'a')
         // this.MenEG = 'asdasd';
-        this.MenEG = data.products;
+        this.MenEG = data.Array;
         
       //console.log(this.Products)
       else if (condition == 'b')
         //this.WomenEG = 'asdsadsdsfdsf';
         // console.log(this.WomenEG);
-        this.WomenEG = data.products;
+        this.WomenEG = data.Array;
       else if (condition == 'c')
-        this.MenSG = data.products;
+        this.MenSG = data.Array;
       else if (condition == 'd')
-        this.WomenSG = data.products;
+        this.WomenSG = data.Array;
       if (data['status'] == 'OK') {
         console.log(status);
         //alert("Login Successful");

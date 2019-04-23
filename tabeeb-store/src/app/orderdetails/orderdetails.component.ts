@@ -58,7 +58,7 @@ export class OrderdetailsComponent implements OnInit {
 
     }).subscribe((data) => {
       this.product = data;
-      // console.log(this.product);
+
       this.product.Array.forEach(product => {
         this.sum = this.sum + product.Price;
         this.photos.push(product.ProductName);

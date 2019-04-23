@@ -43,6 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
 import { SearchproductsComponent } from './searchproducts/searchproducts.component';
 import { MoreproductsComponent } from './moreproducts/moreproducts.component';
+import { ReportsComponent } from './reports/reports.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { MoreproductsComponent } from './moreproducts/moreproducts.component';
     SearchComponent,
     SearchproductsComponent,
     MoreproductsComponent,
+    ReportsComponent,
   ],
   imports: [
     BrowserModule,
